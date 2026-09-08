@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import { useAssessment } from '@/context/AssessmentContext';
 
 interface CameraProps {
   stream: MediaStream | null;
@@ -11,6 +12,8 @@ interface CameraProps {
 
 export default function Camera({ stream, isRecording, isAnswering, recordingTimeSeconds = 0 }: CameraProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const { isCenteredConfirmed, setCenteredConfirmed, theme } = useAssessment();
+  const isDark = theme === 'dark';
 
   useEffect(() => {
     if (videoRef.current) {
@@ -24,8 +27,15 @@ export default function Camera({ stream, isRecording, isAnswering, recordingTime
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  // Show human outline overlay when camera is live, centering is not yet confirmed, and answering hasn't started
+  const showHumanOverlay = stream && !isCenteredConfirmed && !isAnswering;
+
   return (
-    <div className="relative w-full aspect-video bg-slate-950 rounded-3xl border border-slate-800 overflow-hidden shadow-2xl flex items-center justify-center">
+    <div
+      className={`relative w-full aspect-video rounded-3xl border overflow-hidden shadow-2xl flex items-center justify-center transition-colors duration-300 ${
+        isDark ? 'bg-slate-950 border-slate-800' : 'bg-slate-900 border-slate-300'
+      }`}
+    >
       {stream ? (
         <>
           <video
@@ -36,8 +46,83 @@ export default function Camera({ stream, isRecording, isAnswering, recordingTime
             className="w-full h-full object-cover -scale-x-100" // Mirrored webcam display
           />
 
+          {/* Human Outline Silhouette Overlay for Student Centering */}
+          {showHumanOverlay && (
+            <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center transition-all duration-500 animate-fade-in">
+              {/* Human Head & Shoulders SVG Guide */}
+              <div className="relative w-48 h-64 sm:w-56 sm:h-72 opacity-80 animate-pulse">
+                <svg
+                  className="w-full h-full text-indigo-400 drop-shadow-[0_0_12px_rgba(99,102,241,0.6)]"
+                  viewBox="0 0 200 260"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {/* Head Outline */}
+                  <ellipse
+                    cx="100"
+                    cy="85"
+                    rx="48"
+                    ry="58"
+                    stroke="currentColor"
+                    strokeWidth="3.5"
+                    strokeDasharray="8 6"
+                  />
+                  {/* Shoulders Outline */}
+                  <path
+                    d="M30 250 C30 190, 60 160, 100 160 C140 160, 170 190, 170 250"
+                    stroke="currentColor"
+                    strokeWidth="3.5"
+                    strokeDasharray="8 6"
+                  />
+                  {/* Eye Level Guide Line */}
+                  <line
+                    x1="60"
+                    y1="80"
+                    x2="140"
+                    y2="80"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeDasharray="3 3"
+                    className="opacity-60"
+                  />
+                  {/* Center Target Reticle */}
+                  <circle cx="100" cy="85" r="4" fill="currentColor" className="animate-ping" />
+                </svg>
+              </div>
+            </div>
+          )}
+
+          {/* Centering Prompt Banner with "Yes, I'm Centered" Button */}
+          {showHumanOverlay && (
+            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-slate-900/95 backdrop-blur-xl border border-indigo-500/40 shadow-2xl shadow-indigo-950/60 z-20 animate-bounce-subtle">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-white uppercase tracking-wider">Webcam Alignment</h4>
+                  <p className="text-xs text-slate-300 mt-0.5">Are you centered inside the outline frame?</p>
+                </div>
+              </div>
+
+              <button
+                id="btn-confirm-centered"
+                type="button"
+                onClick={() => setCenteredConfirmed(true)}
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold text-xs tracking-wide shadow-lg shadow-emerald-500/30 active:scale-95 transition-all duration-200 cursor-pointer shrink-0 flex items-center gap-1.5"
+              >
+                <span>Yes, I&apos;m Centered!</span>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              </button>
+            </div>
+          )}
+
           {/* Top Overlay Badges */}
-          <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+          <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none z-10">
             {/* Live Recording Badge */}
             {isRecording && (
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-600/90 backdrop-blur-md text-white text-xs font-bold tracking-wider shadow-lg animate-pulse">

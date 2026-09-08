@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAssessment } from '@/context/AssessmentContext';
 import { uploadRecording, syncWithExternalApp, SyncResponse } from '@/lib/api';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function DoneClient() {
   const router = useRouter();
-  const { studentInfo, recordedBlob, recordedBlobUrl, resetSession } = useAssessment();
+  const { studentInfo, recordedBlob, recordedBlobUrl, resetSession, theme } = useAssessment();
+  const isDark = theme === 'dark';
 
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncResult, setSyncResult] = useState<SyncResponse | null>(null);
@@ -56,25 +58,50 @@ export default function DoneClient() {
   const fileName = `OralAssessment_${studentInfo.name.replace(/\s+/g, '_')}_${studentInfo.grade}.webm`;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div
+      className={`min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 transition-colors duration-300 ${
+        isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-100 text-slate-900'
+      }`}
+    >
       {/* Ambient background lighting */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-emerald-600/10 rounded-full blur-3xl" />
+        <div
+          className={`absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full blur-3xl ${
+            isDark ? 'bg-emerald-600/10' : 'bg-emerald-200/40'
+          }`}
+        />
       </div>
 
-      <div className="relative w-full max-w-3xl bg-slate-900/90 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8">
+      {/* Top Header Controls */}
+      <div className="absolute top-4 right-4 z-20">
+        <ThemeToggle />
+      </div>
+
+      <div
+        className={`relative w-full max-w-3xl backdrop-blur-xl border rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8 transition-colors duration-300 ${
+          isDark
+            ? 'bg-slate-900/90 border-slate-800 shadow-slate-950/50'
+            : 'bg-white/95 border-slate-200 shadow-slate-300/50'
+        }`}
+      >
         {/* Header */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-            <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border ${
+              isDark
+                ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+                : 'bg-emerald-50 border-emerald-200 text-emerald-700'
+            }`}
+          >
+            <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
             </svg>
             Assessment Completed
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+          <h1 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
             Thank You, {studentInfo.name}!
           </h1>
-          <p className="text-sm text-slate-400 max-w-md mx-auto">
+          <p className={`text-sm max-w-md mx-auto ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
             Your oral response video has been recorded successfully and is ready for review or export.
           </p>
         </div>
@@ -82,17 +109,21 @@ export default function DoneClient() {
         {/* Video Player */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            <h3 className={`text-xs font-bold uppercase tracking-wider ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
               Recorded Video Preview
             </h3>
             {recordedBlob && (
-              <span className="text-xs font-mono text-slate-500">
+              <span className={`text-xs font-mono ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
                 Size: {(recordedBlob.size / (1024 * 1024)).toFixed(2)} MB
               </span>
             )}
           </div>
 
-          <div className="relative aspect-video bg-black rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+          <div
+            className={`relative aspect-video rounded-2xl overflow-hidden border shadow-xl ${
+              isDark ? 'bg-black border-slate-800' : 'bg-slate-900 border-slate-300'
+            }`}
+          >
             {recordedBlobUrl ? (
               <video
                 src={recordedBlobUrl}
@@ -115,9 +146,13 @@ export default function DoneClient() {
               id="download-recording-link"
               href={recordedBlobUrl}
               download={fileName}
-              className="py-4 px-6 rounded-2xl font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-3 shadow-lg group cursor-pointer text-sm"
+              className={`py-4 px-6 rounded-2xl font-bold border active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-3 shadow-lg group cursor-pointer text-sm ${
+                isDark
+                  ? 'bg-slate-800 hover:bg-slate-700 text-white border-slate-700'
+                  : 'bg-slate-100 hover:bg-slate-200 text-slate-900 border-slate-300'
+              }`}
             >
-              <svg className="w-5 h-5 text-indigo-400 group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-indigo-500 group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               <span>Download Video (.webm)</span>
@@ -160,8 +195,8 @@ export default function DoneClient() {
           <div
             className={`p-4 rounded-2xl text-sm border flex items-start gap-3 ${
               syncResult.success
-                ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
-                : 'bg-rose-500/10 border-rose-500/30 text-rose-300'
+                ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-500'
+                : 'bg-rose-500/10 border-rose-500/30 text-rose-500'
             }`}
           >
             <svg className="w-5 h-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -181,11 +216,13 @@ export default function DoneClient() {
         )}
 
         {/* Reset / Start New Assessment */}
-        <div className="pt-4 border-t border-slate-800 flex justify-center">
+        <div className={`pt-4 border-t flex justify-center ${isDark ? 'border-slate-800' : 'border-slate-200'}`}>
           <button
             type="button"
             onClick={handleStartNew}
-            className="text-xs font-semibold text-slate-400 hover:text-white underline underline-offset-4 transition-colors cursor-pointer"
+            className={`text-xs font-semibold underline underline-offset-4 transition-colors cursor-pointer ${
+              isDark ? 'text-slate-400 hover:text-white' : 'text-slate-600 hover:text-slate-900'
+            }`}
           >
             Start New Assessment Session
           </button>

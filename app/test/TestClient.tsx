@@ -7,6 +7,7 @@ import { getCameraAndMicStream, getSupportedMimeType, stopStreamTracks } from '@
 import Camera from '@/components/Camera';
 import QuestionDisplay from '@/components/QuestionDisplay';
 import ControlButtons from '@/components/ControlButtons';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function TestClient() {
   const router = useRouter();
@@ -16,10 +17,13 @@ export default function TestClient() {
     currentQuestionIndex,
     currentQuestion,
     testState,
+    theme,
     setTestState,
     advanceToNextQuestion,
     setRecordedBlob,
   } = useAssessment();
+
+  const isDark = theme === 'dark';
 
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [recordingSeconds, setRecordingSeconds] = useState<number>(0);
@@ -48,7 +52,11 @@ export default function TestClient() {
 
   if (!studentInfo || questions.length === 0) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center text-slate-400">
+      <div
+        className={`min-h-screen flex items-center justify-center font-medium ${
+          isDark ? 'bg-slate-950 text-slate-400' : 'bg-slate-100 text-slate-600'
+        }`}
+      >
         Loading assessment session...
       </div>
     );
@@ -181,40 +189,63 @@ export default function TestClient() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between p-4 sm:p-6 lg:p-8">
+    <div
+      className={`min-h-screen flex flex-col justify-between p-4 sm:p-6 lg:p-8 transition-colors duration-300 ${
+        isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-100 text-slate-900'
+      }`}
+    >
       {/* Ambient background glow */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-3xl" />
+        <div
+          className={`absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-3xl ${
+            isDark ? 'bg-indigo-900/10' : 'bg-indigo-300/30'
+          }`}
+        />
       </div>
 
       <div className="max-w-7xl w-full mx-auto space-y-6 relative z-10">
         {/* Header Bar */}
-        <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-3xl p-5 shadow-lg">
+        <header
+          className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 backdrop-blur-xl border rounded-3xl p-5 shadow-lg transition-colors duration-300 ${
+            isDark
+              ? 'bg-slate-900/80 border-slate-800 shadow-slate-950/40'
+              : 'bg-white/90 border-slate-200 shadow-slate-200/50'
+          }`}
+        >
           <div>
             <div className="flex items-center gap-3">
-              <h1 className="text-xl font-bold text-white tracking-tight">Student Oral Assessment</h1>
-              <span className="px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold">
+              <h1 className={`text-xl font-bold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                Student Oral Assessment
+              </h1>
+              <span
+                className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+                  isDark ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'
+                }`}
+              >
                 {studentInfo.grade.toUpperCase()}
               </span>
             </div>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Student: <strong className="text-slate-200">{studentInfo.name}</strong>
+            <p className={`text-xs mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+              Student: <strong className={isDark ? 'text-slate-200' : 'text-slate-900'}>{studentInfo.name}</strong>
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <div className="text-right">
-              <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-500">Session Progress</span>
-              <span className="text-xs font-mono font-bold text-indigo-400">
+              <span className={`block text-[10px] font-bold uppercase tracking-wider ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+                Session Progress
+              </span>
+              <span className="text-xs font-mono font-bold text-indigo-500">
                 Question {currentQuestionIndex + 1} of {questions.length}
               </span>
             </div>
+            <ThemeToggle />
           </div>
         </header>
 
         {/* Camera Error Banner */}
         {cameraError && (
-          <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-sm flex items-center justify-between gap-4">
+          <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-500 text-sm flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />

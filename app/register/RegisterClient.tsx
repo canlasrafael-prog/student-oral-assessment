@@ -3,10 +3,12 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAssessment } from '@/context/AssessmentContext';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function RegisterClient() {
   const router = useRouter();
-  const { registerStudent } = useAssessment();
+  const { registerStudent, theme } = useAssessment();
+  const isDark = theme === 'dark';
 
   const [name, setName] = useState('');
   const [grade, setGrade] = useState('grade1');
@@ -32,29 +34,58 @@ export default function RegisterClient() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div
+      className={`min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 transition-colors duration-300 ${
+        isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-100 text-slate-900'
+      }`}
+    >
       {/* Background ambient light */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl" />
+        <div
+          className={`absolute -top-40 -left-40 w-96 h-96 rounded-full blur-3xl ${
+            isDark ? 'bg-indigo-600/20' : 'bg-indigo-300/40'
+          }`}
+        />
+        <div
+          className={`absolute -bottom-40 -right-40 w-96 h-96 rounded-full blur-3xl ${
+            isDark ? 'bg-violet-600/20' : 'bg-violet-300/40'
+          }`}
+        />
       </div>
 
-      <div className="relative w-full max-w-lg bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-indigo-950/50">
+      {/* Top Header Controls */}
+      <div className="absolute top-4 right-4 z-20">
+        <ThemeToggle />
+      </div>
+
+      <div
+        className={`relative w-full max-w-lg backdrop-blur-xl border rounded-3xl p-6 sm:p-8 shadow-2xl transition-all duration-300 ${
+          isDark
+            ? 'bg-slate-900/80 border-slate-800 shadow-indigo-950/50'
+            : 'bg-white/90 border-slate-200 shadow-slate-300/50'
+        }`}
+      >
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
+          <div
+            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border ${
+              isDark
+                ? 'bg-indigo-500/10 border-indigo-500/20 text-indigo-400'
+                : 'bg-indigo-50 border-indigo-200 text-indigo-700'
+            }`}
+          >
+            <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
             Oral Response Assessment
           </div>
-          <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          <h1 className={`text-3xl font-extrabold tracking-tight sm:text-4xl ${isDark ? 'text-white' : 'text-slate-900'}`}>
             Student Registration
           </h1>
-          <p className="mt-2 text-sm text-slate-400">
+          <p className={`mt-2 text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
             Please enter your information to start your grade-adapted oral assessment session.
           </p>
         </div>
 
         {errorMsg && (
-          <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-sm flex items-center gap-3">
+          <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-500 text-sm flex items-center gap-3">
             <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
@@ -64,8 +95,13 @@ export default function RegisterClient() {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="student-name" className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-              Student Full Name <span className="text-rose-400">*</span>
+            <label
+              htmlFor="student-name"
+              className={`block text-xs font-bold uppercase tracking-wider mb-2 ${
+                isDark ? 'text-slate-300' : 'text-slate-700'
+              }`}
+            >
+              Student Full Name <span className="text-rose-500">*</span>
             </label>
             <input
               id="student-name"
@@ -74,19 +110,32 @@ export default function RegisterClient() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Alex Johnson"
-              className="w-full px-4 py-3 bg-slate-800/80 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
+              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 ${
+                isDark
+                  ? 'bg-slate-800/80 border-slate-700 text-white placeholder-slate-500'
+                  : 'bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400'
+              }`}
             />
           </div>
 
           <div>
-            <label htmlFor="grade-level" className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-              Grade Level <span className="text-rose-400">*</span>
+            <label
+              htmlFor="grade-level"
+              className={`block text-xs font-bold uppercase tracking-wider mb-2 ${
+                isDark ? 'text-slate-300' : 'text-slate-700'
+              }`}
+            >
+              Grade Level <span className="text-rose-500">*</span>
             </label>
             <select
               id="grade-level"
               value={grade}
               onChange={(e) => setGrade(e.target.value)}
-              className="w-full px-4 py-3 bg-slate-800/80 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 cursor-pointer"
+              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 cursor-pointer ${
+                isDark
+                  ? 'bg-slate-800/80 border-slate-700 text-white'
+                  : 'bg-slate-50 border-slate-300 text-slate-900'
+              }`}
             >
               <option value="grade1">Grade 1</option>
               <option value="grade2">Grade 2</option>
@@ -98,17 +147,31 @@ export default function RegisterClient() {
           </div>
 
           {/* Privacy & Recording Notice */}
-          <div className="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-900/50 space-y-3">
+          <div
+            className={`p-4 rounded-2xl border space-y-3 ${
+              isDark
+                ? 'bg-indigo-950/40 border-indigo-900/50'
+                : 'bg-indigo-50/70 border-indigo-200/80'
+            }`}
+          >
             <div className="flex items-start gap-3">
               <input
                 id="consent-checkbox"
                 type="checkbox"
                 checked={consentGiven}
                 onChange={(e) => setConsentGiven(e.target.checked)}
-                className="mt-1 w-4 h-4 rounded border-slate-700 text-indigo-600 focus:ring-indigo-500 bg-slate-800 cursor-pointer"
+                className="mt-1 w-4 h-4 rounded border-slate-400 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
               />
-              <label htmlFor="consent-checkbox" className="text-xs text-slate-300 leading-relaxed cursor-pointer select-none">
-                <strong className="text-indigo-300">Media Recording Consent Notice:</strong> This session will be video recorded (webcam & microphone) for educational oral assessment purposes. By checking this box, you confirm permission to record this session.
+              <label
+                htmlFor="consent-checkbox"
+                className={`text-xs leading-relaxed cursor-pointer select-none ${
+                  isDark ? 'text-slate-300' : 'text-slate-700'
+                }`}
+              >
+                <strong className={isDark ? 'text-indigo-300' : 'text-indigo-800'}>
+                  Media Recording Consent Notice:
+                </strong>{' '}
+                This session will be video recorded (webcam & microphone) for educational oral assessment purposes. By checking this box, you confirm permission to record this session.
               </label>
             </div>
           </div>
