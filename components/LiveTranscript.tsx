@@ -8,8 +8,7 @@ interface LiveTranscriptProps {
 }
 
 export default function LiveTranscript({ testState }: LiveTranscriptProps) {
-  const { liveTranscript, setLiveTranscript, theme } = useAssessment();
-  const isDark = theme === 'dark';
+  const { liveTranscript, setLiveTranscript } = useAssessment();
   const [isSupported, setIsSupported] = useState<boolean>(true);
   const recognitionRef = useRef<any>(null);
 
@@ -64,17 +63,15 @@ export default function LiveTranscript({ testState }: LiveTranscriptProps) {
   }, [isAnswering]);
 
   if (!isSupported) {
-    return null;
+    return (
+      <div className="w-full p-3 rounded-2xl border border-amber-500/20 bg-amber-500/10 text-amber-300 text-xs">
+        ℹ️ Auto Voice Transcription is supported in Chrome, Edge, and Safari.
+      </div>
+    );
   }
 
   return (
-    <div
-      className={`w-full p-4 rounded-2xl border transition-colors duration-300 ${
-        isDark
-          ? 'bg-slate-900/80 border-slate-800 text-slate-200'
-          : 'bg-white/90 border-slate-200 text-slate-800'
-      }`}
-    >
+    <div className="w-full p-4 rounded-2xl border border-slate-800 bg-slate-900/80 text-slate-200 transition-colors duration-300">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
@@ -88,28 +85,24 @@ export default function LiveTranscript({ testState }: LiveTranscriptProps) {
             />
           </span>
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-            Live Speech Transcript
+            Auto Speech Transcription
           </span>
         </div>
         {isAnswering && (
-          <span className="text-[10px] font-mono font-semibold text-emerald-500 animate-pulse">
-            Listening...
+          <span className="text-[10px] font-mono font-semibold text-emerald-400 animate-pulse">
+            Transcribing Live Speech...
           </span>
         )}
       </div>
 
-      <div
-        className={`min-h-[48px] max-h-24 overflow-y-auto p-2.5 rounded-xl text-xs font-sans leading-relaxed ${
-          isDark ? 'bg-slate-950/60 border border-slate-800/80' : 'bg-slate-50 border border-slate-200'
-        }`}
-      >
+      <div className="min-h-[48px] max-h-28 overflow-y-auto p-2.5 rounded-xl text-xs font-sans leading-relaxed bg-slate-950/60 border border-slate-800/80">
         {liveTranscript ? (
-          <p className="text-slate-300 font-medium italic">&quot;{liveTranscript}&quot;</p>
+          <p className="text-slate-200 font-medium italic">&quot;{liveTranscript}&quot;</p>
         ) : (
           <p className="text-slate-500 italic">
             {isAnswering
-              ? 'Start speaking to see your live transcript appear here...'
-              : 'Live transcript will appear here when you answer prompts.'}
+              ? 'Start speaking into your mic to see your live voice transcript accumulate here...'
+              : 'Auto voice transcript will appear here as you answer prompts.'}
           </p>
         )}
       </div>

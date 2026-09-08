@@ -7,8 +7,7 @@ import { useAssessment } from '@/context/AssessmentContext';
 
 export default function RegisterClient() {
   const router = useRouter();
-  const { registerStudent, theme, timerSecondsPerQuestion, setTimerSecondsPerQuestion } = useAssessment();
-  const isDark = theme === 'dark';
+  const { registerStudent, timerSecondsPerQuestion, setTimerSecondsPerQuestion } = useAssessment();
 
   const [name, setName] = useState('');
   const [grade, setGrade] = useState('grade1');
@@ -34,47 +33,23 @@ export default function RegisterClient() {
   };
 
   return (
-    <div
-      className={`min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 transition-colors duration-300 ${
-        isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-100 text-slate-900'
-      }`}
-    >
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 bg-slate-950 text-slate-100 transition-colors duration-300">
       {/* Background ambient light */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div
-          className={`absolute -top-40 -left-40 w-96 h-96 rounded-full blur-3xl ${
-            isDark ? 'bg-indigo-600/20' : 'bg-indigo-300/40'
-          }`}
-        />
-        <div
-          className={`absolute -bottom-40 -right-40 w-96 h-96 rounded-full blur-3xl ${
-            isDark ? 'bg-violet-600/20' : 'bg-violet-300/40'
-          }`}
-        />
+        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full blur-3xl bg-indigo-600/20" />
+        <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full blur-3xl bg-violet-600/20" />
       </div>
 
-      <div
-        className={`relative w-full max-w-lg backdrop-blur-xl border rounded-3xl p-6 sm:p-8 shadow-2xl transition-all duration-300 ${
-          isDark
-            ? 'bg-slate-900/80 border-slate-800 shadow-indigo-950/50'
-            : 'bg-white/90 border-slate-200 shadow-slate-300/50'
-        }`}
-      >
+      <div className="relative w-full max-w-lg backdrop-blur-xl border border-slate-800 bg-slate-900/80 shadow-indigo-950/50 rounded-3xl p-6 sm:p-8 shadow-2xl transition-all duration-300">
         <div className="text-center mb-8">
-          <div
-            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border ${
-              isDark
-                ? 'bg-indigo-500/10 border-indigo-500/20 text-indigo-400'
-                : 'bg-indigo-50 border-indigo-200 text-indigo-700'
-            }`}
-          >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border bg-indigo-500/10 border-indigo-500/20 text-indigo-400">
             <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
             Oral Response Assessment
           </div>
-          <h1 className={`text-3xl font-extrabold tracking-tight sm:text-4xl ${isDark ? 'text-white' : 'text-slate-900'}`}>
+          <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
             Student Registration
           </h1>
-          <p className={`mt-2 text-sm ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+          <p className="mt-2 text-sm text-slate-400">
             Please enter your information to start your grade-adapted oral assessment session.
           </p>
         </div>
@@ -92,9 +67,7 @@ export default function RegisterClient() {
           <div>
             <label
               htmlFor="student-name"
-              className={`block text-xs font-bold uppercase tracking-wider mb-2 ${
-                isDark ? 'text-slate-300' : 'text-slate-700'
-              }`}
+              className="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-300"
             >
               Student Full Name <span className="text-rose-500">*</span>
             </label>
@@ -105,11 +78,7 @@ export default function RegisterClient() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Alex Johnson"
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 ${
-                isDark
-                  ? 'bg-slate-800/80 border-slate-700 text-white placeholder-slate-500'
-                  : 'bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400'
-              }`}
+              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 bg-slate-800/80 border-slate-700 text-white placeholder-slate-500"
             />
           </div>
 
@@ -117,9 +86,7 @@ export default function RegisterClient() {
             <div>
               <label
                 htmlFor="grade-level"
-                className={`block text-xs font-bold uppercase tracking-wider mb-2 ${
-                  isDark ? 'text-slate-300' : 'text-slate-700'
-                }`}
+                className="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-300"
               >
                 Grade Level <span className="text-rose-500">*</span>
               </label>
@@ -127,11 +94,7 @@ export default function RegisterClient() {
                 id="grade-level"
                 value={grade}
                 onChange={(e) => setGrade(e.target.value)}
-                className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 cursor-pointer ${
-                  isDark
-                    ? 'bg-slate-800/80 border-slate-700 text-white'
-                    : 'bg-slate-50 border-slate-300 text-slate-900'
-                }`}
+                className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 cursor-pointer bg-slate-800/80 border-slate-700 text-white"
               >
                 <option value="grade1">Grade 1</option>
                 <option value="grade2">Grade 2</option>
@@ -146,9 +109,7 @@ export default function RegisterClient() {
             <div>
               <label
                 htmlFor="timer-select"
-                className={`block text-xs font-bold uppercase tracking-wider mb-2 ${
-                  isDark ? 'text-slate-300' : 'text-slate-700'
-                }`}
+                className="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-300"
               >
                 Question Timer
               </label>
@@ -156,11 +117,7 @@ export default function RegisterClient() {
                 id="timer-select"
                 value={timerSecondsPerQuestion}
                 onChange={(e) => setTimerSecondsPerQuestion(Number(e.target.value))}
-                className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 cursor-pointer ${
-                  isDark
-                    ? 'bg-slate-800/80 border-slate-700 text-white'
-                    : 'bg-slate-50 border-slate-300 text-slate-900'
-                }`}
+                className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 cursor-pointer bg-slate-800/80 border-slate-700 text-white"
               >
                 <option value={30}>30 seconds / prompt</option>
                 <option value={45}>45 seconds / prompt</option>
@@ -173,13 +130,7 @@ export default function RegisterClient() {
           </div>
 
           {/* Privacy & Recording Notice */}
-          <div
-            className={`p-4 rounded-2xl border space-y-3 ${
-              isDark
-                ? 'bg-indigo-950/40 border-indigo-900/50'
-                : 'bg-indigo-50/70 border-indigo-200/80'
-            }`}
-          >
+          <div className="p-4 rounded-2xl border space-y-3 bg-indigo-950/40 border-indigo-900/50">
             <div className="flex items-start gap-3">
               <input
                 id="consent-checkbox"
@@ -190,11 +141,9 @@ export default function RegisterClient() {
               />
               <label
                 htmlFor="consent-checkbox"
-                className={`text-xs leading-relaxed cursor-pointer select-none ${
-                  isDark ? 'text-slate-300' : 'text-slate-700'
-                }`}
+                className="text-xs leading-relaxed cursor-pointer select-none text-slate-300"
               >
-                <strong className={isDark ? 'text-indigo-300' : 'text-indigo-800'}>
+                <strong className="text-indigo-300">
                   Media Recording Consent Notice:
                 </strong>{' '}
                 This session will be video recorded (webcam & microphone) for educational oral assessment purposes. By checking this box, you confirm permission to record this session.
@@ -218,9 +167,7 @@ export default function RegisterClient() {
         <div className="mt-6 pt-4 border-t border-slate-700/40 text-center">
           <Link
             href="/teacher"
-            className={`text-xs font-semibold underline underline-offset-4 transition-colors ${
-              isDark ? 'text-slate-400 hover:text-indigo-300' : 'text-slate-600 hover:text-indigo-600'
-            }`}
+            className="text-xs font-semibold underline underline-offset-4 text-slate-400 hover:text-indigo-300 transition-colors"
           >
             👩‍🏫 Switch to Teacher / Proctor Review Dashboard
           </Link>

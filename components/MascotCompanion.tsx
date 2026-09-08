@@ -8,8 +8,7 @@ interface MascotCompanionProps {
 }
 
 export default function MascotCompanion({ testState }: MascotCompanionProps) {
-  const { theme, showKoreanSubtitles } = useAssessment();
-  const isDark = theme === 'dark';
+  const { showKoreanSubtitles } = useAssessment();
   const [bubbleText, setBubbleText] = useState<string>('Hi there! I am Sparky! I will guide you through your assessment!');
   const [koreanBubbleText, setKoreanBubbleText] = useState<string>('안녕하세요! 저는 스파키예요! 평가 과정을 도와줄게요!');
 
@@ -49,18 +48,8 @@ export default function MascotCompanion({ testState }: MascotCompanionProps) {
       </div>
 
       {/* Mascot Speech Bubble */}
-      <div
-        className={`relative px-4 py-2.5 rounded-2xl text-xs font-semibold shadow-md transition-colors duration-300 ${
-          isDark
-            ? 'bg-slate-800/90 text-amber-200 border border-amber-500/30'
-            : 'bg-amber-50 text-slate-800 border border-amber-200'
-        }`}
-      >
-        <div
-          className={`absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-2 h-2 rotate-45 ${
-            isDark ? 'bg-slate-800 border-l border-b border-amber-500/30' : 'bg-amber-50 border-l border-b border-amber-200'
-          }`}
-        />
+      <div className="relative px-4 py-2.5 rounded-2xl text-xs font-semibold shadow-md transition-colors duration-300 bg-slate-800/90 text-amber-200 border border-amber-500/30">
+        <div className="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-2 h-2 rotate-45 bg-slate-800 border-l border-b border-amber-500/30" />
         <p className="leading-snug">{bubbleText}</p>
         {showKoreanSubtitles && (
           <p className="mt-1 text-[11px] font-medium text-blue-300 border-t border-amber-500/20 pt-1">

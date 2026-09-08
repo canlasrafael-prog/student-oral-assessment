@@ -18,13 +18,10 @@ export default function TestClient() {
     currentQuestionIndex,
     currentQuestion,
     testState,
-    theme,
     setTestState,
     advanceToNextQuestion,
     setRecordedBlob,
   } = useAssessment();
-
-  const isDark = theme === 'dark';
 
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [recordingSeconds, setRecordingSeconds] = useState<number>(0);
@@ -53,11 +50,7 @@ export default function TestClient() {
 
   if (!studentInfo || questions.length === 0) {
     return (
-      <div
-        className={`min-h-screen flex items-center justify-center font-medium ${
-          isDark ? 'bg-slate-950 text-slate-400' : 'bg-slate-100 text-slate-600'
-        }`}
-      >
+      <div className="min-h-screen flex items-center justify-center font-medium bg-slate-950 text-slate-400">
         Loading assessment session...
       </div>
     );
@@ -190,51 +183,33 @@ export default function TestClient() {
   };
 
   return (
-    <div
-      className={`min-h-screen flex flex-col justify-between p-4 sm:p-6 lg:p-8 transition-colors duration-300 ${
-        isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-100 text-slate-900'
-      }`}
-    >
+    <div className="min-h-screen flex flex-col justify-between p-4 sm:p-6 lg:p-8 bg-slate-950 text-slate-100 transition-colors duration-300">
       {/* Ambient background glow */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div
-          className={`absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-3xl ${
-            isDark ? 'bg-indigo-900/10' : 'bg-indigo-300/30'
-          }`}
-        />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-3xl bg-indigo-900/10" />
       </div>
 
       <div className="max-w-7xl w-full mx-auto space-y-6 relative z-10">
         {/* Header Bar with Mascot */}
-        <header
-          className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 backdrop-blur-xl border rounded-3xl p-5 shadow-lg transition-colors duration-300 ${
-            isDark
-              ? 'bg-slate-900/80 border-slate-800 shadow-slate-950/40'
-              : 'bg-white/90 border-slate-200 shadow-slate-200/50'
-          }`}
-        >
+        <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 backdrop-blur-xl border border-slate-800 bg-slate-900/80 shadow-slate-950/40 rounded-3xl p-5 shadow-lg transition-colors duration-300">
           <div>
             <div className="flex items-center gap-3">
-              <h1 className={`text-xl font-bold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+              <h1 className="text-xl font-bold tracking-tight text-white">
                 Student Oral Assessment
               </h1>
-              <span
-                className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
-                  isDark ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'
-                }`}
-              >
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300">
                 {studentInfo.grade.toUpperCase()}
               </span>
             </div>
-            <p className={`text-xs mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-              Student: <strong className={isDark ? 'text-slate-200' : 'text-slate-900'}>{studentInfo.name}</strong>
+            <p className="text-xs mt-0.5 text-slate-400">
+              Student: <strong className="text-slate-200">{studentInfo.name}</strong>
             </p>
           </div>
 
           <div className="flex items-center gap-4">
             <MascotCompanion testState={testState} />
             <div className="text-right">
-              <span className={`block text-[10px] font-bold uppercase tracking-wider ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+              <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-500">
                 Session Progress
               </span>
               <span className="text-xs font-mono font-bold text-indigo-500">

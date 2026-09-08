@@ -4,10 +4,9 @@ import React, { useEffect, useState, useRef } from 'react';
 
 interface AudioLevelMeterProps {
   stream: MediaStream | null;
-  isDark?: boolean;
 }
 
-export default function AudioLevelMeter({ stream, isDark = true }: AudioLevelMeterProps) {
+export default function AudioLevelMeter({ stream }: AudioLevelMeterProps) {
   const [audioLevel, setAudioLevel] = useState<number>(0);
   const animationFrameRef = useRef<number | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -65,11 +64,7 @@ export default function AudioLevelMeter({ stream, isDark = true }: AudioLevelMet
 
   return (
     <div
-      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border backdrop-blur-md transition-colors duration-300 ${
-        isDark
-          ? 'bg-slate-900/90 border-slate-700/80 text-slate-300 shadow-lg shadow-black/40'
-          : 'bg-white/95 border-slate-300 text-slate-700 shadow-md shadow-slate-200/50'
-      }`}
+      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-700/80 bg-slate-900/90 text-slate-300 shadow-lg shadow-black/40 backdrop-blur-md transition-colors duration-300"
       title={`Live Mic Volume: ${audioLevel}%`}
     >
       <svg className="w-3.5 h-3.5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,9 +84,7 @@ export default function AudioLevelMeter({ stream, isDark = true }: AudioLevelMet
                     : idx > 2
                     ? 'bg-amber-400 h-2.5'
                     : 'bg-emerald-400 h-2'
-                  : isDark
-                  ? 'bg-slate-800 h-1'
-                  : 'bg-slate-300 h-1'
+                  : 'bg-slate-800 h-1'
               }`}
             />
           );

@@ -13,8 +13,7 @@ interface CameraProps {
 
 export default function Camera({ stream, isRecording, isAnswering, recordingTimeSeconds = 0 }: CameraProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const { isCenteredConfirmed, setCenteredConfirmed, theme } = useAssessment();
-  const isDark = theme === 'dark';
+  const { isCenteredConfirmed, setCenteredConfirmed } = useAssessment();
 
   useEffect(() => {
     if (videoRef.current) {
@@ -32,11 +31,7 @@ export default function Camera({ stream, isRecording, isAnswering, recordingTime
   const showHumanOverlay = stream && !isCenteredConfirmed && !isAnswering;
 
   return (
-    <div
-      className={`relative w-full aspect-video rounded-3xl border overflow-hidden shadow-2xl flex items-center justify-center transition-colors duration-300 ${
-        isDark ? 'bg-slate-950 border-slate-800' : 'bg-slate-900 border-slate-300'
-      }`}
-    >
+    <div className="relative w-full aspect-video rounded-3xl border border-slate-800 bg-slate-950 overflow-hidden shadow-2xl flex items-center justify-center transition-colors duration-300">
       {stream ? (
         <>
           <video
@@ -143,7 +138,7 @@ export default function Camera({ stream, isRecording, isAnswering, recordingTime
                   <span>REC {formatTime(recordingTimeSeconds)}</span>
                 </div>
               )}
-              <AudioLevelMeter stream={stream} isDark={isDark} />
+              <AudioLevelMeter stream={stream} />
             </div>
 
             {/* Answering Mode Active Badge */}
