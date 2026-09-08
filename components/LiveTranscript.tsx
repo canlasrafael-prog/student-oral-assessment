@@ -8,7 +8,7 @@ interface LiveTranscriptProps {
 }
 
 export default function LiveTranscript({ testState }: LiveTranscriptProps) {
-  const { liveTranscript, setLiveTranscript } = useAssessment();
+  const { liveTranscript, setLiveTranscript, studentInfo } = useAssessment();
   const [isSupported, setIsSupported] = useState<boolean>(true);
   const recognitionRef = useRef<any>(null);
 
@@ -62,6 +62,30 @@ export default function LiveTranscript({ testState }: LiveTranscriptProps) {
     }
   }, [isAnswering]);
 
+  const handleDownloadTranscript = () => {
+    const studentName = studentInfo?.name || 'Student';
+    const studentGrade = studentInfo?.grade || 'OralAssessment';
+    const textContent = `STUDENT ORAL ASSESSMENT TRANSCRIPT
+=====================================
+Student Name: ${studentName}
+Grade Level: ${studentGrade}
+Recorded Date: ${new Date().toLocaleString()}
+-------------------------------------
+TRANSCRIPT:
+${liveTranscript || '(No speech transcript recorded yet)'}
+`;
+
+    const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `Transcript_${studentName.replace(/\s+/g, '_')}_${studentGrade}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   if (!isSupported) {
     return (
       <div className="w-full p-3 rounded-2xl border border-amber-500/20 bg-amber-500/10 text-amber-300 text-xs">
@@ -71,8 +95,8 @@ export default function LiveTranscript({ testState }: LiveTranscriptProps) {
   }
 
   return (
-    <div className="w-full p-4 rounded-2xl border border-slate-800 bg-slate-900/80 text-slate-200 transition-colors duration-300">
-      <div className="flex items-center justify-between mb-2">
+    <div className="w-full p-4 rounded-2xl border border-slate-800 bg-slate-900/80 text-slate-200 transition-colors duration-300 space-y-3">
+      <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
             {isAnswering && (
@@ -105,6 +129,21 @@ export default function LiveTranscript({ testState }: LiveTranscriptProps) {
               : 'Auto voice transcript will appear here as you answer prompts.'}
           </p>
         )}
+      </div>
+
+      {/* Direct Download Transcript (.txt) Button */}
+      <div className="flex justify-end pt-1">
+        <button
+          type="button"
+          onClick={handleDownloadTranscript}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-blue-600/30 hover:bg-blue-600/50 text-blue-300 border border-blue-500/40 shadow-sm transition-all duration-200 cursor-pointer active:scale-95"
+          title="Download the current speech transcript as a .txt file"
+        >
+          <svg className="w-3.5 h-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <span>Download Transcript (.txt)</span>
+        </button>
       </div>
     </div>
   );
