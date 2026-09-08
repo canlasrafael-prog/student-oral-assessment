@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { AssessmentProvider } from '@/context/AssessmentContext';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${inter.className} bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white`} suppressHydrationWarning>
-        <AssessmentProvider>{children}</AssessmentProvider>
+        <AssessmentProvider>
+          <ThemeToggle />
+          {children}
+        </AssessmentProvider>
       </body>
     </html>
   );

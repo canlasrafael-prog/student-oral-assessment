@@ -48,45 +48,56 @@ export default function Camera({ stream, isRecording, isAnswering, recordingTime
 
           {/* Human Outline Silhouette Overlay for Student Centering */}
           {showHumanOverlay && (
-            <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center transition-all duration-500 animate-fade-in">
-              {/* Human Head & Shoulders SVG Guide */}
-              <div className="relative w-48 h-64 sm:w-56 sm:h-72 opacity-80 animate-pulse">
+            <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center transition-all duration-500 animate-fade-in z-15">
+              {/* Human Head & Shoulders SVG Guide (Enlarged) */}
+              <div className="relative w-[75%] h-[82%] max-w-[340px] max-h-[380px] opacity-85 animate-pulse">
                 <svg
-                  className="w-full h-full text-indigo-400 drop-shadow-[0_0_12px_rgba(99,102,241,0.6)]"
-                  viewBox="0 0 200 260"
+                  className="w-full h-full text-indigo-400 drop-shadow-[0_0_18px_rgba(99,102,241,0.7)]"
+                  viewBox="0 0 240 300"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   {/* Head Outline */}
                   <ellipse
-                    cx="100"
-                    cy="85"
-                    rx="48"
-                    ry="58"
+                    cx="120"
+                    cy="95"
+                    rx="62"
+                    ry="74"
                     stroke="currentColor"
-                    strokeWidth="3.5"
-                    strokeDasharray="8 6"
+                    strokeWidth="4"
+                    strokeDasharray="10 7"
                   />
-                  {/* Shoulders Outline */}
+                  {/* Shoulders & Upper Body Outline */}
                   <path
-                    d="M30 250 C30 190, 60 160, 100 160 C140 160, 170 190, 170 250"
+                    d="M20 290 C20 215, 65 185, 120 185 C175 185, 220 215, 220 290"
                     stroke="currentColor"
-                    strokeWidth="3.5"
-                    strokeDasharray="8 6"
+                    strokeWidth="4"
+                    strokeDasharray="10 7"
                   />
                   {/* Eye Level Guide Line */}
                   <line
-                    x1="60"
-                    y1="80"
-                    x2="140"
-                    y2="80"
+                    x1="68"
+                    y1="90"
+                    x2="172"
+                    y2="90"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeDasharray="4 4"
+                    className="opacity-70"
+                  />
+                  {/* Vertical Center Line */}
+                  <line
+                    x1="120"
+                    y1="30"
+                    x2="120"
+                    y2="280"
                     stroke="currentColor"
                     strokeWidth="1.5"
-                    strokeDasharray="3 3"
-                    className="opacity-60"
+                    strokeDasharray="4 4"
+                    className="opacity-40"
                   />
                   {/* Center Target Reticle */}
-                  <circle cx="100" cy="85" r="4" fill="currentColor" className="animate-ping" />
+                  <circle cx="120" cy="95" r="5" fill="currentColor" className="animate-ping" />
                 </svg>
               </div>
             </div>
