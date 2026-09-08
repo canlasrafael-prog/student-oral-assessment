@@ -1,39 +1,183 @@
 {
-  "grade1": {
+  "kinder": {
     "narrative": [
       "Can you tell me five weather words? (Like sunny, rainy...)",
       "Can you tell me five shapes? (Like circle, square...)",
       "Can you tell me five animals? (Like dog, cat...)",
       "Can you tell me five family members? (Like mother, father...)",
-      "Tell me about your morning routine."
+      "Excuse me, could you tell me what time the main library closes today?",
+      "A classmate asks about the study group schedule.\ncould you tell me ___ ___ ___ ___ ___ ___ ___ ___?",
+      "A student wants to confirm the library schedule.\ncan you tell me ___ ___ ___ ___ ___ ___ ___?"
     ],
     "descriptive": [
       "Can you say five colors? (Like red, blue...)",
       "Can you say five things you wear?",
       "What are five rooms in a house?",
+      "Can you name five vegetables?",
       "What are five things you use at school? (Like pencil, book...)",
-      "What are five things you see outside?"
+      "What are five things you see outside?",
+      "Can you name five toys or games?",
+      "What are five drinks you know?",
+      "What are five things in the kitchen?",
+      "Can you say five action words? (Like run, jump...)",
+      "What are five foods you like?",
+      "Can you name five body parts? (Like head, hand...)",
+      "What are five things in your classroom?",
+      "What are five fruits you know?",
+      "Which of the following best describes the unifying characteristic of early writing systems discussed in the passage?",
+      "Which statement accurately describes the updated plan for film night?"
     ],
     "expository": [
-      "Do you like chocolate or vanilla ice cream more? Why?",
+      "Oh no, I think I've dropped my wallet somewhere near the lecture hall!",
+      "How do you like living in the campus dorms so far?",
+      "Can you remind me where the seminar meets?",
+      "I am not sure how to cite this source.",
+      "What is the most important idea presented in the last paragraph regarding solutions to the Tragedy of the Commons?",
+      "What is the main idea of the passage?",
+      "According to the passage, why did railway networks make public clocks more important in the nineteenth century?",
+      "According to paragraph 1, how can wetlands reduce pressure on urban drainage systems after heavy rain?",
+      "According to the passage, how do animal pollinators help many flowering plants reproduce?",
+      "Where can absent students get their worksheets?",
+      "What is the main purpose of the notice?",
+      "Who should arrive at 6:45 p.m., and where should they go?",
+      "The professor moved the deadline to Friday.\nthe professor explained ___ ___ ___ ___ ___ ___ ___ ___.",
+      "The orientation room was changed.\nthe notice explains ___ ___ ___ ___ ___ ___ ___ ___.",
+      "A guest speaker did not come to class.\ndid he explain ___ ___ ___ ___ ___ ___ ___?",
+      "What is the passage mainly about?",
+      "According to the passage, what is one advantage of citizen science bird counts?",
+      "Short Quizzes Before Lectures\n\nSome instructors give short quizzes before lectures to encourage students to complete the reading. Are pre-lecture quizzes a good way to improve learning? Explain your opinion with reasons and examples.\n\nAria: Pre-lecture quizzes can be useful because they push students to read before class and notice confusing points early. However, the quizzes should be low-stakes, or students may focus on memorizing details instead of preparing thoughtful questions.\n\nJoon: I think these quizzes work best when they are connected to discussion. If the teacher reviews common wrong answers, students can see why the reading matters, but a quiz that only records a score may not improve understanding much.",
+      "You registered for a guest seminar related to your major, but you now have a required exam review at the same time. The seminar organizer invited students to submit questions in advance. Write an email asking whether a recording or summary will be available.\nExplain why you cannot attend the seminar.\nAsk whether a recording, slides, or written summary will be available afterward.\nExpress continued interest and include one question you hoped to ask the speaker.\nUse a polite and professional tone.\nYou have 7 minutes to write your email."
+    ],
+    "argumentative": [
+      "What's for lunch in the student cafeteria today?",
+      "I cannot find the room for my advising meeting.",
+      "I forgot to submit the attendance form.",
+      "The professor changed the reading assignment.",
+      "I need to print my poster before noon.",
+      "The group meeting is too early for me.",
+      "According to the passage, what defines the 'Tragedy of the Commons'?",
+      "The word 'accrues' in the passage is closest in meaning to",
+      "Why does the author mention 'physical resources like grazing land or fisheries' and 'non-tangible commons such as the atmosphere'?",
+      "According to the passage, what was the primary reason for the development of cuneiform writing in Mesopotamia?",
+      "The word 'profoundly' in the passage is closest in meaning to",
+      "Why does the author mention the use of 'reed styluses' and 'clay tablets' when discussing cuneiform?",
+      "According to the passage, what was a primary characteristic of books before the invention of the printing press?",
+      "The word 'pivotal' in the first sentence is closest in meaning to",
+      "What can be inferred about communities before standardized railway schedules became important?",
+      "Why does the author mention skilled workers, public funding, and regular adjustment?",
+      "Why does the author mention plants and soils in wetlands?",
+      "What can be inferred about wetland restoration projects from the passage?",
+      "In the final sentence, why does the author call wetlands 'valuable infrastructure'?",
+      "Why does the author contrast farms with only one crop with areas containing hedgerows, native flowers, and uncultivated strips?"
+    ],
+    "persuasive": [
+      "Can you count from one to ten?",
+      "Can you say the days of the week?",
+      "What does \"prize\" mean?",
+      "What does \"civilization\" mean?",
+      "What does \"wizard\" mean?",
+      "What does \"recognize\" mean?",
+      "Hi, I don't think we've met. I'm Alex.",
+      "Hey, are you free on Saturday evening? I was thinking of going to the university concert.",
+      "This philosophy assignment is really tough. I'm struggling with the reading.",
+      "Excuse me, could you point me towards the engineering building?",
+      "The printer charged me, but nothing came out.",
+      "Do you know when the museum tour leaves?",
+      "The article is longer than I expected.",
+      "Can I still join the study group tonight?",
+      "My lab partner changed sections this week.",
+      "The shuttle stop moved across the street.",
+      "I left my notebook in the lecture hall.",
+      "The website says my registration is incomplete.",
+      "My student account was charged twice.",
+      "It can be inferred from the pasture example that initially, the shared resource was:"
+    ]
+  },
+  "grade1": {
+    "narrative": [
+      "Tell me about your morning routine.",
+      "Who is in your family? Tell me about them.",
+      "Tell your friend why sharing toys is good. Use one reason and smile!",
+      "Tell why bedtime story is important. Use happy words!",
+      "What is the setting of the story?",
+      "What is the story about?"
+    ],
+    "descriptive": [
+      "Describe your favorite toy. What does it look like?",
+      "What does your teacher look like?",
+      "Describe your pet or a pet you want.",
+      "Maestro Cherry started to look around to see who said the words:",
+      "What are the kids doing?",
+      "Which word does NOT describe the coon?",
+      "Look at the picture and write about it.",
+      "How does the passage describe the relationship between the Yorkshire moors and Emily's writing?",
+      "How does the passage describe the current state of Native American cultural preservation?"
+    ],
+    "expository": [
       "How do you wash your hands?",
       "How do you make a peanut butter sandwich?",
       "How do you brush your teeth?",
-      "How do you tie your shoes?"
+      "How do you tie your shoes?",
+      "How do you get ready for school?",
+      "What is your favorite food? Why?",
+      "Show why washing hands keeps us healthy. Use gestures!",
+      "How can pets help us avoid stress?",
+      "What is this about?",
+      "Why did the king thank Dan?",
+      "What is the purpose of this passage?",
+      "What is the best title for the picture?",
+      "What is this?",
+      "What is your favorite thing to do during the weekends?",
+      "What is your favorite thing to do in school?",
+      "How did the pigeon feel about sharing?",
+      "Where did Buzz take the fly?",
+      "How has the discovery of chemosynthetic life affected scientific thinking?",
+      "What is the fundamental distinction between primary and secondary sources?",
+      "How does the passage characterize the transition from blood feuds to formal legal systems?"
     ],
     "argumentative": [
+      "Do you like chocolate or vanilla ice cream more? Why?",
       "Is it better to have a cat or a dog? Why?",
       "Should bedtime be earlier or later? Why?",
       "Do you prefer summer or winter? Give reasons.",
       "Is it better to play inside or outside? Why?",
-      "Can you name five toys or games?"
+      "What color is your shirt? Your shoes?",
+      "Is your room big or small? What color is it?",
+      "What did you eat for breakfast?",
+      "Ask mom for a cookie. Say \"please\" and give one reason.",
+      "Connor and ________ were riding our bikes when it started to rain.",
+      "Water is important. Without _______ , we cannot live.",
+      "She studied hard _______ she got a high score on the test.",
+      "Choose the plural of the word \"sheep.\"",
+      "The students __________ the classroom tomorrow.",
+      "Choose the correct answer based on the picture.",
+      "I always _________ at 7 a.m. in the morning.",
+      "Last winter, I ________ with my parents at a ski resort in Denver.",
+      "What time ________ he _________ in class tomorrow?",
+      "Later, my dad ________ on his motorcycle.",
+      "Listen to the audio and choose the correct answer."
     ],
     "persuasive": [
-      "Can you name five vegetables?",
-      "Can you count from one to ten?",
-      "Can you name five body parts? (Like head, hand...)",
-      "Can you say the days of the week?",
-      "What does your teacher look like?"
+      "왜 아이는 낡은 물건을 끝까지 품는가?",
+      "작가는 왜 새것이 아니라 낡은 장난감에 마음을 붙였을까?",
+      "이 감정은 아이의 삶에서 어떤 변화를 보여 줄까?",
+      "안정된 관계와 반복 루틴이 왜 중요할까?",
+      "낡아질수록 의미가 커지는 장면 표시",
+      "버리지 못하는 물건 1개를 떠올리기",
+      "사물과 기억의 관계를 3문장으로 쓰기",
+      "What did you do today?",
+      "Ask to go to the park. Say \"fun\" and \"play\"!",
+      "My mother _______ angry with me yesterday.",
+      "____________ you ___________ breakfast every day? No, I don't.",
+      "John and Steve are best friends. Yesterday, I saw _______ playing at the park.",
+      "I slept ______9:00 p.m last night.",
+      "My wallet is ________ my bag.",
+      "__________ Tuesday, I will meet my father.",
+      "My father is _____ than my mother.",
+      "The pig is ______ animal that lives on land.",
+      "My best friend is _______. He always gets good grades.",
+      "My friends ______ on a picnic soon.",
+      "I was hungry, ________ I didn't eat."
     ]
   },
   "grade2": {
@@ -41,147 +185,319 @@
       "Tell me about a fun day you had.",
       "Tell me about your best friend.",
       "Tell your parents why you need a pet. Promise to care for it.",
-      "Tell a story about a memorable trip or weekend adventure with your family.",
-      "Describe a time you lost something important and how you searched for it."
+      "What is a lesson of the story?",
+      "Get ___ bed, and then I will read you a story.",
+      "What is the story about?",
+      "Who is the main character in the story?",
+      "What is the setting of the story?",
+      "What can you guess in the story?",
+      "Which sentence tells an opinion?",
+      "Shantell is very \"polite.\"",
+      "PART 2: Choose ONE picture below and write a 5-sentence story about it."
     ],
     "descriptive": [
+      "What does your classroom look like?",
       "Describe your best friend. What do they look like?",
       "Describe your house. How many rooms are there?",
       "Describe your favorite place to go.",
-      "Describe your school playground. What equipment and areas are there?",
-      "Describe your favorite book character. What do they look like and wear?"
+      "Which word best describes Sara?",
+      "What are you ___ __ at the moment?",
+      "Look at that man! He ___ __ to fall in that hole."
     ],
     "expository": [
       "How do you get to school from home?",
       "How do you cross the street safely?",
       "How do you make your bed?",
       "How do you play your favorite game?",
-      "How do you take care of a pet?"
+      "How do you take care of a pet?",
+      "Ask your teacher for extra recess. Explain why it helps learning.",
+      "Where are Mina and Leo?",
+      "Where are the students going?",
+      "Why did the plan change?",
+      "Where are Jun and his mother going?",
+      "What is the best title for this passage?",
+      "How did Sara make the bridge stronger?",
+      "Why did Toby not want to join the play at first?",
+      "How long did Toby practice during lunch?",
+      "How did Toby probably feel at the end?",
+      "What is the passage mostly about?",
+      "How are penguins and ducks alike?",
+      "Why did they put a sign beside the garden?",
+      "Why did Nora practice at home?",
+      "What is this?"
     ],
     "argumentative": [
       "Should schools have longer recess? Why?",
       "Should children have homework? Why or why not?",
       "Should students wear uniforms? Give reasons.",
       "Is it better to read books or watch TV? Why?",
-      "Should kids help with chores at home? Why?"
+      "Should kids help with chores at home? Why?",
+      "What does your favorite food taste like?",
+      "Ask family for pizza night. Give three happy reasons!",
+      "Mina ___ her homework after dinner every day.",
+      "Emma ___ eat candy before dinner.",
+      "You ___ wash your hands before lunch.",
+      "Tomorrow morning, Dad ___ breakfast for us.",
+      "Which word should be capitalized? \"my birthday is in june.\"",
+      "Which sentence is correct?",
+      "There is ___ orange in my lunch box.",
+      "What color is Coco?",
+      "What does Coco need every morning?",
+      "Why should students move slowly near Coco?",
+      "What should students bring?",
+      "What did Leo forget?",
+      "Why should students use quiet voices?"
     ],
     "persuasive": [
+      "왜 밤이 되면 아이의 몸은 더 늦게 멈추는가?",
+      "작가는 잠자리를 왜 유머로 보여 주었을까?",
+      "밤의 갈등은 어디에서 반복될까?",
+      "루틴이 생체리듬에 주는 영향은 무엇일까?",
+      "잠들기 전 가장 힘든 행동 1개 적기",
+      "가족이 진정시키는 말 1개 찾기",
+      "루틴이 바뀌면 몸이 어떻게 달라지는지 기록하기",
       "What can you see from your window?",
-      "What does your classroom look like?",
       "What did you do last weekend?",
       "What happened on your birthday?",
-      "Convince friends that reading is fun. Compare to TV time."
+      "Convince your friend to help clean up. Give two reasons why it's good.",
+      "Convince friends that reading is fun. Compare to TV time.",
+      "The turtle walks ___ than the rabbit.",
+      "This is not my pencil. It is ___.",
+      "The students sang ___ at the school concert.",
+      "Lina is the ___ runner in her class.",
+      "___ a new playground near our school.",
+      "Did you ___ your jacket at home?",
+      "___ your brother like soccer?",
+      "I need ___ water after running outside."
     ]
   },
   "grade3": {
     "narrative": [
       "Tell me about your favorite story or movie. What happens?",
       "Tell me about a time you were happy.",
-      "Tell a story about a time you tried something difficult and succeeded.",
-      "Describe an exciting mystery or puzzle you solved with a friend.",
-      "Tell a story about a science experiment that went differently than expected."
+      "Describe a significant career setback you experienced and what leadership lessons you learned.",
+      "Tell a story about a mentor who fundamentally changed your professional worldview."
     ],
     "descriptive": [
       "Describe your favorite place to play. What makes it fun?",
+      "What does your neighborhood look like?",
       "Describe a perfect day. What's the weather like?",
+      "What does your favorite meal look and taste like?",
       "Describe what you see at a park or playground.",
-      "Describe a time you helped someone.",
-      "Describe a bustling farmers market or grocery store full of fresh items."
+      "Describe a time you helped someone."
     ],
     "expository": [
       "How does a plant grow? What does it need?",
       "How do you make a simple meal like scrambled eggs?",
       "How do bees make honey?",
       "How do you organize your school bag?",
-      "Why is recycling important? How do we do it?"
+      "Why is recycling important? How do we do it?",
+      "Persuade classmates to recycle. Explain how it helps Earth with examples.",
+      "Ask parents for later bedtime on weekends. Show responsibility.",
+      "Convince school to have a talent show. Explain community benefits.",
+      "Why did Ash feel lonely at first?"
     ],
     "argumentative": [
       "Should students use phones in school? Why or why not?",
       "Is it better to live in a city or countryside? Why?",
       "Should everyone learn a second language? Why?",
       "Should junk food be banned in schools? Why?",
-      "Is it better to have many friends or few close ones?"
+      "Is it better to have many friends or few close ones?",
+      "Persuade friends to try a new sport. Highlight fun and fitness.",
+      "What did Drake do before going to the castle?",
+      "What transported the group into the Minecraft world?",
+      "What was the most important lesson for Dragon Masters?",
+      "Read this passage aloud for one minute."
     ],
     "persuasive": [
+      "왜 공동체는 느린 돌봄을 필요로 하는가?",
+      "작가는 왜 작은 돌봄을 큰 힘으로 보여 주었을까?",
+      "이 작품은 관계를 어떻게 성장의 조건으로 말하는가?",
+      "소속감이 학습과 감정에 미치는 영향은 무엇일까?",
+      "돌봄이 작품에서 어떤 상징으로 쓰이는지 찾기",
+      "가장 편안한 관계의 장면 표시하기",
+      "공동체가 개인을 살리는 예를 적기",
       "What do you like to do on holidays?",
       "If you found $10, what would you do?",
       "Convince your teacher to plan a field trip. List learning benefits.",
-      "Persuade your local community leader to build a new skateboard or bike park.",
-      "Convince your teacher to take the class on a field trip to a science museum."
+      "Who brought Drake to the castle?",
+      "What did Drake discover underground?",
+      "Who was Griffith?",
+      "What mode were they in inside the game?",
+      "What did they need to do to stay alive in the game?",
+      "What did Drake need to learn to do with his dragon?",
+      "When would a dragon use its powers?",
+      "What happened when Drake first tried talking to his dragon?",
+      "What does \"castle\" mean?",
+      "What does \"chosen\" mean?"
     ]
   },
   "grade4": {
     "narrative": [
+      "Tell me about your favorite story or movie. What happens?",
+      "Tell me about a time you were happy.",
       "Tell me about a time you were scared. What happened?",
-      "Tell a story about a challenge your team faced during a sports game or contest.",
-      "Describe a historical event from the perspective of someone living back then.",
-      "Tell a story about finding a strange object in your backyard or park.",
-      "Describe a day when technology stopped working and how you adapted."
+      "Tell me about a difficult choice you had to make.",
+      "Describe a time when things didn't go as planned.",
+      "Tell me about a time you learned an important lesson.",
+      "Why did Lena feel proud at the end of the story?",
+      "Which lesson best fits the story?",
+      "Why was the map useful for Arun's history project?",
+      "For her history report, Nora arranged important dates from oldest to newest on a timeline. What is a timeline?",
+      "My brother and ____________ are interested in Korean history.",
+      "Was the woman cured in the end of the story?",
+      "What did the woman realize at the end of the story?",
+      "What is the theme of the story?",
+      "Which sentence best goes with this story?",
+      "To wish you ❛good luck❜ before performing in your school play, your teacher tells you to...",
+      "PART 2: Choose ONE picture and write a 10-sentence story about it.",
+      "In what year does this story take place?"
     ],
     "descriptive": [
+      "Describe your favorite place to play. What makes it fun?",
+      "What does your neighborhood look like?",
+      "Describe a perfect day. What's the weather like?",
+      "What does your favorite meal look and taste like?",
+      "Describe what you see at a park or playground.",
       "Describe your ideal bedroom. What would be in it?",
       "Describe walking through a forest. What do you notice?",
+      "What does your school look like to a visitor?",
+      "Describe a busy market. What sights, sounds, and smells do you notice?",
+      "Describe your favorite season. How does it affect everything?",
+      "Describe a festival in your country. What's the atmosphere?",
+      "Describe a time you helped someone.",
       "Describe a problem you solved. How did you do it?",
-      "Describe a dense forest in autumn as the leaves change color and fall.",
-      "Describe the atmosphere inside a crowded stadium during a championship match."
+      "What are Ella and Marco preparing for their science project?",
+      "Which statement best describes what the passage explains?",
+      "We are looking for someone who is skilled ______________ giving presentations.",
+      "What are they going to do on Thursday evening?",
+      "What are the plans for Friday afternoon?",
+      "What word best describes Kate's character based on her actions?"
     ],
     "expository": [
-      "Is social media good or bad for teenagers? Why?",
-      "Are video games educational or harmful? Why?",
+      "How does a plant grow? What does it need?",
+      "How do you make a simple meal like scrambled eggs?",
+      "How do bees make honey?",
+      "How do you organize your school bag?",
+      "Why is recycling important? How do we do it?",
       "How does rain form? Explain the water cycle.",
       "How do you prepare for a test?",
-      "How does a bicycle work? What makes it move?"
+      "How does a bicycle work? What makes it move?",
+      "How do you plan a birthday party?",
+      "How does your body digest food?",
+      "How does the internet work? How does information travel?",
+      "How do plants make their own food? Explain photosynthesis.",
+      "How do you make an important decision?",
+      "How does electricity get to your home?",
+      "How do ecosystems work? How do living things depend on each other?",
+      "If you could visit any country, where would you go?",
+      "Persuade classmates to recycle. Explain how it helps Earth with examples.",
+      "Ask parents for later bedtime on weekends. Show responsibility.",
+      "Convince school to have a talent show. Explain community benefits.",
+      "Convince parents for a smartphone. Address concerns, show maturity."
     ],
     "argumentative": [
+      "Should students use phones in school? Why or why not?",
+      "Is it better to live in a city or countryside? Why?",
+      "Should everyone learn a second language? Why?",
+      "Should junk food be banned in schools? Why?",
+      "Is it better to have many friends or few close ones?",
       "Should animals be kept in zoos? Why or why not?",
       "Should school start later in the morning? Why?",
+      "Is social media good or bad for teenagers? Why?",
       "Should everyone do community service? Why?",
-      "What does your school look like to a visitor?",
-      "Ask teacher to accept creative project format. Link to learning goals."
+      "Are video games educational or harmful? Why?",
+      "Should grades determine a student's future? Why or why not?",
+      "Is technology making us smarter or lazier? Why?",
+      "Should plastic be completely banned? Why?",
+      "Is it better to work hard or work smart? Why?",
+      "Should space exploration be a priority? Why?",
+      "Paint a picture with words of sunrise or sunset.",
+      "Persuade friends to try a new sport. Highlight fun and fitness.",
+      "Ask teacher to accept creative project format. Link to learning goals.",
+      "Convince friends to volunteer monthly. Share personal impact stories.",
+      "Ask for internship opportunity. Demonstrate value to both parties."
     ],
     "persuasive": [
+      "왜 어떤 아이의 다름은 강점이 아니라 약점으로 먼저 읽히는가?",
+      "작가는 왜 성공을 천재성보다 훈련으로 설명할까?",
+      "다름이 약점처럼 보이는 구조는 무엇일까?",
+      "자기효능감은 어떻게 자라나는가?",
+      "포기하지 않는 반복 행동 1개 찾기",
+      "사람들이 오해한 특징 1개 쓰기",
+      "재능과 훈련 중 무엇이 더 보이는지 비교하기",
       "Imagine you're at the beach. What do you see, hear, and feel?",
       "What's the atmosphere like at a birthday party?",
-      "If you could visit any country, where would you go?",
+      "What's it like at the top of a tall building?",
+      "What do you like to do on holidays?",
+      "If you found $10, what would you do?",
+      "If you could have any pet, what would it be? Why?",
       "What would you do if you won a lot of money?",
-      "Persuade your class to join a charity walk. Appeal to helping others and team spirit."
+      "If you could change one thing about your past, what would it be?",
+      "What would life be like if phones didn't exist?",
+      "Convince your teacher to plan a field trip. List learning benefits.",
+      "Persuade your class to join a charity walk. Appeal to helping others and team spirit.",
+      "Persuade school to reduce plastic use. Provide solutions and impact.",
+      "Persuade school board to change lunch menu. Use health data and student surveys."
     ]
   },
   "grade5": {
     "narrative": [
       "Tell me about a difficult choice you had to make.",
       "Describe a time when things didn't go as planned.",
-      "Tell me about a time you learned an important lesson.",
-      "Tell a story about a moment when you had to show courage in a difficult situation.",
-      "Describe a memorable mentor or teacher who changed how you think."
+      "Tell me about a time you learned an important lesson."
     ],
     "descriptive": [
       "Describe a busy market. What sights, sounds, and smells do you notice?",
       "Describe your favorite season. How does it affect everything?",
-      "Describe a festival in your country. What's the atmosphere?",
-      "Describe a starry night sky viewed from a high mountain or remote area.",
-      "Describe the bustling environment of an international airport terminal."
+      "Describe a festival in your country. What's the atmosphere?"
     ],
     "expository": [
-      "Is technology making us smarter or lazier? Why?",
       "How does the internet work? How does information travel?",
       "How do plants make their own food? Explain photosynthesis.",
       "How do you make an important decision?",
-      "How does electricity get to your home?"
+      "How does electricity get to your home?",
+      "How do ecosystems work? How do living things depend on each other?",
+      "Convince community to support local business. Show economic and social impact.",
+      "Where was Salva when the gunfire started?",
+      "Why didn't Salva run toward his home?"
     ],
     "argumentative": [
       "Should grades determine a student's future? Why or why not?",
+      "Is technology making us smarter or lazier? Why?",
       "Should plastic be completely banned? Why?",
       "Is it better to work hard or work smart? Why?",
       "Should space exploration be a priority? Why?",
-      "Paint a picture with words of sunrise or sunset."
+      "Paint a picture with words of sunrise or sunset.",
+      "Ask for internship opportunity. Demonstrate value to both parties.",
+      "What was beginning for Salva at the end of the passage?",
+      "What did Lita give to Petra before the launch?",
+      "According to Lita, why were stories so important?",
+      "What does \"enormous\" mean?",
+      "What does \"ordinary\" mean?",
+      "Read this passage aloud for one minute."
     ],
     "persuasive": [
+      "왜 공감과 불안은 리더십의 반대가 아니라 조건이 될 수 있는가?",
+      "작가는 왜 불안을 리더십의 일부로 볼까?",
+      "좋은 리더는 왜 강해 보여야만 할까?",
+      "공감이 실제 행동을 바꾸는 방식은 무엇일까?",
+      "약점처럼 보였던 성격 1개 찾기",
+      "리더십을 바꾸는 태도 1개 쓰기",
+      "경청이 힘이 되는 이유를 정리하기",
       "What's it like at the top of a tall building?",
       "If you could change one thing about your past, what would it be?",
       "What would life be like if phones didn't exist?",
       "Persuade school board to change lunch menu. Use health data and student surveys.",
-      "Convince family to adopt eco-friendly habits. Present cost and planet benefits."
+      "Convince family to adopt eco-friendly habits. Present cost and planet benefits.",
+      "Persuade classmates to stand against bullying. Use emotional and logical appeals.",
+      "What kind of life did the Dursleys want to have?",
+      "What strange things were happening in town that day?",
+      "Who arrived on Privet Drive that night?",
+      "What was special about the baby that was delivered?",
+      "What did Salva have with him when he was separated from everyone?",
+      "What threat was Earth facing?",
+      "What promise did Lita ask Petra to make?"
     ]
   },
   "grade6": {
@@ -189,36 +505,432 @@
       "Should artificial intelligence replace human jobs? Why or why not?",
       "Describe a cityscape at night. What story does it tell?",
       "Tell me about a belief you've changed over time.",
-      "Tell a story about a major transition, such as moving to a new school or community.",
-      "Describe an ethical dilemma you faced and how you decided on the right path."
+      "Scientists could tell what specific sounds the people were hearing:",
+      "_________ your history teacher?",
+      "What was Milo's main character trait at the beginning of the story?"
     ],
     "descriptive": [
       "Describe a place that made you feel peaceful. What created that feeling?",
       "How would you describe the feeling of nostalgia?",
       "Describe how a piece of music makes you feel.",
       "Describe a moral dilemma you've faced. How did you resolve it?",
-      "Describe a high-tech laboratory where scientists conduct cutting-edge research."
+      "___ the instructions looked simple, the model collapsed because one support beam had been measured incorrectly.",
+      "What word best describes the mood in the passage?",
+      "Who is your hero? What individual do you look up to and want to be like? Why is this person special to you? What has this person done that is important to you?"
     ],
     "expository": [
-      "Is privacy more important than security? Why?",
       "Should wealthy countries help developing nations? How much?",
       "How does an airplane fly? Explain the principles.",
       "How does sleep affect your brain and body?",
-      "How do governments make laws?"
+      "How do governments make laws?",
+      "How does climate change happen?",
+      "How do vaccines work in your body?",
+      "If you woke up with a superpower, how would your life change?",
+      "The engineer ___ the students interviewed explained how bridges carry weight.",
+      "The first paragraph explains the problem; ___, the second paragraph presents a possible solution.",
+      "The guide explained that the ancient tools ___ by farmers more than two thousand years ago.",
+      "The article refers to a scientist ___ theory changed how people understood germs.",
+      "What is the main purpose of the announcement?",
+      "What is the main idea of the passage?",
+      "Why did fish probably not return as soon as the oxygen levels improved?",
+      "What is the central idea of the passage?",
+      "Which detail best shows that the signs alone did not fully solve the problem?",
+      "How did the new layout help both group workers and students working alone?",
+      "Why did the students recommend starting with predictable flat routes?",
+      "Why did the students test the strange sensor in another bed?",
+      "Why did the principal call the project useful evidence, not final proof?"
     ],
     "argumentative": [
       "Is economic growth more important than environmental protection?",
       "Should genetic modification of humans be allowed?",
+      "Is privacy more important than security? Why?",
       "Persuade investors to fund your startup idea. Present market research and vision.",
       "Ask for promotion at work. Quantify achievements and future contributions.",
-      "Convince community to support renewable energy. Address concerns and benefits."
+      "Convince community to support renewable energy. Address concerns and benefits.",
+      "The more carefully the group checked its sources, ___ its final report became.",
+      "The debate coach gave the final speaking order to Hana, Mateo, and ___ after practice.",
+      "Not only the project leader but also the team members ___ responsible for checking the equipment.",
+      "Had the school received the weather warning earlier, the field trip ___ postponed before students arrived.",
+      "No sooner had the speaker begun her presentation ___ the projector stopped working.",
+      "The students had their essays ___ by a peer reviewer before submitting the final drafts.",
+      "The lab report was so detailed ___ even students from another class could repeat the experiment.",
+      "The students ___ for the regional science fair must submit their safety forms by Thursday.",
+      "___ the limited time available, the group completed a careful and well-organized presentation.",
+      "___ the instructions twice, Nora noticed that her group had skipped the final step.",
+      "The team saved a copy of every source in order ___ its information later.",
+      "If the lab had ordered the replacement battery sooner, the robotics team ___ the drone today.",
+      "It is essential that the final report ___ evidence from at least two reliable sources.",
+      "Were the survey data more reliable, the committee ___ approve the proposal."
     ],
     "persuasive": [
+      "역사가 개인의 상처로 남는 이유는 무엇이며, 회복은 어떻게 가능한가?",
+      "작가는 왜 개인의 아픔을 역사와 연결할까?",
+      "회복은 왜 혼자가 아니라 공동체의 문제일까?",
+      "안전한 관계가 트라우마를 바꾸는 이유는 무엇일까?",
+      "말하지 못하는 기억이 남기는 흔적 찾기",
+      "회복의 순간을 1개 표시하기",
+      "과거와 현재가 만나는 장면을 비교하기",
       "What does \"home\" feel like beyond physical description?",
       "What would happen if people could read minds?",
       "If you could relive one day, which would it be and what would you change?",
       "Convince school to implement mental health programs. Use statistics and testimonials.",
-      "Persuade government officials on policy change. Balance multiple stakeholder interests."
+      "Persuade government officials on policy change. Balance multiple stakeholder interests.",
+      "The research team ___ enough data to begin writing its conclusion.",
+      "The school committee published its decision after ___ reviewed every proposal.",
+      "Since the debate topic was announced, Maya ___ evidence from several reliable sources.",
+      "The results were too inconsistent ___ in the final chart.",
+      "By the time the committee meets on Friday, the students ___ their proposal.",
+      "The classroom tablets ___ by the technician when the principal came to check the lab.",
+      "The teacher asked ___ the experiment had produced the same result twice.",
+      "Why will the robotics club meet in Room 214 this week?"
+    ]
+  },
+  "grade7": {
+    "narrative": [
+      "Describe a significant career setback you experienced and what leadership lessons you learned.",
+      "Tell a story about a mentor who fundamentally changed your professional worldview."
+    ],
+    "descriptive": [
+      "Describe the culture and environmental atmosphere of your ideal workplace.",
+      "Describe the key characteristics of an effective leader in a modern global organization."
+    ],
+    "expository": [
+      "What is the main purpose of propaganda?",
+      "How does the bandwagon technique work?",
+      "Approximately how many girls worldwide are out of school?",
+      "What is one barrier to girls' education mentioned in the passage?",
+      "How were children affected by the Civil War?"
+    ],
+    "argumentative": [
+      "Why does repetition work as a propaganda technique?",
+      "According to the passage, what should you ask when you encounter a persuasive message?",
+      "Why were food shortages especially bad in the South?",
+      "What does \"forbidden\" mean?",
+      "Read this passage aloud for one minute."
+    ],
+    "persuasive": [
+      "Why is Malala Yousafzai mentioned in this passage?",
+      "What happens when countries invest in girls' education?",
+      "What new roles did women take on during the Civil War?",
+      "Who was Clara Barton?",
+      "What does \"convince\" mean?",
+      "What does \"courageous\" mean?",
+      "What does \"equal\" mean?",
+      "What does \"generous\" mean?",
+      "What does \"poverty\" mean?",
+      "What does \"protest\" mean?",
+      "What does \"rebellion\" mean?",
+      "What does \"sacrifice\" mean?",
+      "What does \"struggle\" mean?"
+    ]
+  },
+  "grade8": {
+    "narrative": [
+      "Describe a significant career setback you experienced and what leadership lessons you learned.",
+      "Tell a story about a mentor who fundamentally changed your professional worldview."
+    ],
+    "descriptive": [
+      "Describe the culture and environmental atmosphere of your ideal workplace.",
+      "Describe the key characteristics of an effective leader in a modern global organization."
+    ],
+    "expository": [
+      "Where was gold first discovered to start the Klondike Gold Rush?",
+      "Why did the Canadian government require each prospector to bring a ton of supplies?",
+      "How did some entrepreneurs make their fortunes during the Gold Rush?",
+      "Why did piracy flourish during the Golden Age?",
+      "How did Blackbeard create his fearsome appearance in battle?",
+      "What is the difference between a privateer and a pirate?"
+    ],
+    "argumentative": [
+      "What happened to most prospectors who traveled to the Klondike?",
+      "Why was the Mississippi River so important in the 1800s?",
+      "What does \"territory\" mean?",
+      "Read this passage aloud for one minute."
+    ],
+    "persuasive": [
+      "What advantage did steamboats have over flatboats?",
+      "What does the pen name 'Mark Twain' mean?",
+      "What dangers did steamboat travelers face on the Mississippi?",
+      "What made pirate ships surprisingly democratic?",
+      "What does \"adapt\" mean?",
+      "What does \"betrayal\" mean?",
+      "What does \"brutal\" mean?",
+      "What does \"companion\" mean?",
+      "What does \"cunning\" mean?",
+      "What does \"mischievous\" mean?",
+      "What does \"survive\" mean?",
+      "What does \"treasure\" mean?",
+      "What does \"witness\" mean?"
+    ]
+  },
+  "grade9": {
+    "narrative": [
+      "Describe a significant career setback you experienced and what leadership lessons you learned.",
+      "Tell a story about a mentor who fundamentally changed your professional worldview."
+    ],
+    "descriptive": [
+      "Describe the culture and environmental atmosphere of your ideal workplace.",
+      "Describe the key characteristics of an effective leader in a modern global organization."
+    ],
+    "expository": [
+      "What is one lasting legacy of the French Revolution?",
+      "How fast could people travel overland before the steam engine?",
+      "How did the Suez Canal change ocean travel?",
+      "Why did railroads lead to the adoption of standardized time zones?",
+      "How did Aristotle's view of government differ from Machiavelli's?"
+    ],
+    "argumentative": [
+      "What was the significance of the storming of the Bastille?",
+      "What happened during the Reign of Terror?",
+      "What did John Locke argue about the source of government authority?",
+      "Read this passage aloud for one minute."
+    ],
+    "persuasive": [
+      "What was the primary economic cause of the French Revolution?",
+      "What connection does the passage draw between steam travel and Jules Verne?",
+      "What was Machiavelli's central argument in The Prince?",
+      "What enduring question does the passage identify in political philosophy?",
+      "What does \"calculate\" mean?",
+      "What does \"contrast\" mean?",
+      "What does \"imprison\" mean?",
+      "What does \"injustice\" mean?",
+      "What does \"liberty\" mean?",
+      "What does \"punctual\" mean?",
+      "What does \"revolution\" mean?",
+      "What does \"strategy\" mean?",
+      "What does \"suspicious\" mean?",
+      "What does \"wager\" mean?"
+    ]
+  },
+  "grade10": {
+    "narrative": [
+      "Describe a significant career setback you experienced and what leadership lessons you learned.",
+      "Tell a story about a mentor who fundamentally changed your professional worldview."
+    ],
+    "descriptive": [
+      "Describe the culture and environmental atmosphere of your ideal workplace.",
+      "Describe the key characteristics of an effective leader in a modern global organization."
+    ],
+    "expository": [
+      "How has the discovery of chemosynthetic life affected scientific thinking?",
+      "What is the fundamental distinction between primary and secondary sources?",
+      "Explain how economic inflation impacts purchasing power and household investments.",
+      "Explain the strategic implications of adopting artificial intelligence in enterprise operations."
+    ],
+    "argumentative": [
+      "Why was whale oil so economically important before the mid-nineteenth century?",
+      "Why is the deep ocean considered largely unexplored?",
+      "According to the passage, whose perspectives have historically been marginalized in written records?",
+      "What challenge does the passage identify regarding the preservation of digital records?",
+      "What does \"narrator\" mean?",
+      "Read this passage aloud for one minute."
+    ],
+    "persuasive": [
+      "What was a 'Nantucket sleigh ride'?",
+      "What event initiated the decline of the whaling industry?",
+      "What action did the International Whaling Commission take to protect whales?",
+      "What milestone did Piccard and Walsh achieve in 1960?",
+      "Why was the discovery of hydrothermal vents in 1977 so significant?",
+      "Why might a general's war diary be considered a biased primary source?",
+      "What does \"civilization\" mean?",
+      "What does \"encounter\" mean?",
+      "What does \"expedition\" mean?",
+      "What does \"fascination\" mean?",
+      "What does \"isolation\" mean?",
+      "What does \"obsession\" mean?",
+      "What does \"perspective\" mean?",
+      "What does \"submarine\" mean?",
+      "What does \"vast\" mean?"
+    ]
+  },
+  "grade11": {
+    "narrative": [
+      "Describe a significant career setback you experienced and what leadership lessons you learned.",
+      "Tell a story about a mentor who fundamentally changed your professional worldview."
+    ],
+    "descriptive": [
+      "How does the passage describe the relationship between the Yorkshire moors and Emily's writing?",
+      "Describe the culture and environmental atmosphere of your ideal workplace.",
+      "Describe the key characteristics of an effective leader in a modern global organization."
+    ],
+    "expository": [
+      "How does the passage characterize the transition from blood feuds to formal legal systems?",
+      "How do psychologists distinguish forgiveness from reconciliation?",
+      "How did the workhouse system function in practice despite its stated purpose?",
+      "How did Charles Dickens contribute to child labor reform?",
+      "How did the Brontë children's isolated upbringing contribute to their literary development?",
+      "Why did the Brontë sisters publish under male pseudonyms?"
+    ],
+    "argumentative": [
+      "What types of dangerous work did Victorian children perform?",
+      "What does \"corruption\" mean?",
+      "What does \"transform\" mean?",
+      "Read this passage aloud for one minute."
+    ],
+    "persuasive": [
+      "What does neuroscientific research reveal about the brain's response to contemplating revenge?",
+      "What paradox about revenge did the Harvard study identify?",
+      "Why was the Education Act of 1880 considered a watershed moment?",
+      "What literary contributions does the passage attribute to the Brontë sisters?",
+      "What does \"betray\" mean?",
+      "What does \"desperate\" mean?",
+      "What does \"identity\" mean?",
+      "What does \"imprisoned\" mean?",
+      "What does \"neglect\" mean?",
+      "What does \"passionate\" mean?",
+      "What does \"prejudice\" mean?",
+      "What does \"revenge\" mean?"
+    ]
+  },
+  "grade12": {
+    "narrative": [
+      "Describe a significant career setback you experienced and what leadership lessons you learned.",
+      "Tell a story about a mentor who fundamentally changed your professional worldview."
+    ],
+    "descriptive": [
+      "How does the passage describe the current state of Native American cultural preservation?",
+      "Describe the culture and environmental atmosphere of your ideal workplace.",
+      "Describe the key characteristics of an effective leader in a modern global organization."
+    ],
+    "expository": [
+      "How does the theory of natural selection explain the emergence of new species?",
+      "How does the passage characterize Native American societies before European contact?",
+      "Approximately how many words is Shakespeare credited with introducing into the English language?",
+      "How does the passage explain the continued relevance of Shakespeare's works?"
+    ],
+    "argumentative": [
+      "What was the original purpose of the HMS Beagle's expedition?",
+      "What specific observations in the Galápagos Islands contributed to Darwin's theory?",
+      "What fields of evidence does the passage cite as supporting natural selection today?",
+      "What was the most devastating initial consequence of European contact for Native populations?",
+      "Why was the historical period in which Shakespeare wrote particularly conducive to linguistic innovation?",
+      "What quality distinguishes Shakespeare's characters from simple archetypes, according to the passage?",
+      "What does \"authority\" mean?",
+      "What does \"forgiveness\" mean?",
+      "What does \"theory\" mean?",
+      "Read this passage aloud for one minute."
+    ],
+    "persuasive": [
+      "What significance does the passage attribute to the Haudenosaunee Confederacy?",
+      "What does \"adaptation\" mean?",
+      "What does \"conflict\" mean?",
+      "What does \"deceive\" mean?",
+      "What does \"exile\" mean?",
+      "What does \"heritage\" mean?",
+      "What does \"observe\" mean?",
+      "What does \"species\" mean?"
+    ]
+  },
+  "adult": {
+    "narrative": [
+      "Describe how collective memory shapes a place.",
+      "How does artificial intelligence learn? Explain machine learning.",
+      "Discuss a time when your worldview fundamentally shifted.",
+      "Excuse me, could you tell me what time the main library closes today?",
+      "A classmate asks about the study group schedule.\ncould you tell me ___ ___ ___ ___ ___ ___ ___ ___?",
+      "A student wants to confirm the library schedule.\ncan you tell me ___ ___ ___ ___ ___ ___ ___?",
+      "Why does Professor Grant tell Sofia to use the same unit labels on the graph?",
+      "What does the coordinator tell the student to do?",
+      "I reserved the lab camera, although I am not sure whether it includes a memory card.",
+      "What do tracking devices, banding programs, and satellite data show about migration routes?",
+      "Tell me about a time when you participated in a group project or campus activity.",
+      "Tell me about a time when you had to adjust your study plan because new information changed your priorities.",
+      "Describe a time when you changed your plan after receiving new academic advice.",
+      "Tell me about a resource that helped you complete a difficult school assignment.",
+      "Tell me about a time when you had to ask a teacher or staff member for clarification.",
+      "Describe a time when changing your study method helped you understand a difficult topic.",
+      "Tell me about feedback from a teacher that helped you improve an assignment.",
+      "Describe a time when you helped organize a project or activity with other students.",
+      "Tell me about a situation where you had to explain a problem clearly to a teacher or staff member.",
+      "Describe a time when you used a campus resource to solve an academic problem."
+    ],
+    "descriptive": [
+      "Describe a moment when time seemed to stop. What details do you remember?",
+      "How would you describe your culture to someone from another planet?",
+      "Describe the atmosphere before a major life change.",
+      "Describe how a place can hold memories.",
+      "Describe the essence of a place beyond its physical attributes.",
+      "How would you describe consciousness to someone who's never experienced it?",
+      "Describe the feeling of being between two cultures.",
+      "Describe how a major world event has personally affected you.",
+      "Which choice best describes data from the graph that support the library director's conclusion?",
+      "Which choice best describes the role of the evidence about the blue glass fragments?",
+      "Which choice best describes the overall structure of the text?",
+      "Which statement best describes the function of the sediment evidence?",
+      "Which choice best describes data from the table that support the curator's conclusion?",
+      "Which choice best describes the reviewer's tone?",
+      "Which statement best describes data from the graph that support the physiologist's conclusion?",
+      "Which statement best describes data from the table that support the archivist's prediction?",
+      "Which choice best describes the function of the final sentence in the text as a whole?",
+      "Which choice best describes the reviewer's criticism?",
+      "The scatterplot shows the relationship between the number of hours after opening and the number of cups of tea sold at a cafe. Which statement best describes the data shown?",
+      "Which statement best describes data from the table that support the scientist's prediction?"
+    ],
+    "expository": [
+      "Should there be limits on free speech? Where?",
+      "How do economic systems affect daily life?",
+      "How does music affect the brain?",
+      "How do social movements create change?",
+      "How does quantum physics challenge our understanding?",
+      "How do complex systems emerge from simple rules?",
+      "How does consciousness arise from neural activity?",
+      "How do cultural narratives shape society?",
+      "How does language evolution reflect human development?",
+      "How do feedback loops create unintended consequences?",
+      "Imagine society without social media. How would relationships differ?",
+      "How would humanity change if we discovered we're not alone in the universe?",
+      "What paradox of modern life troubles you most? How would you address it?",
+      "How might humanity evolve if we achieve immortality?",
+      "The table gives four values of x and their corresponding values of g(x), where g is a quadratic function. Which equation could define g?",
+      "The system of equations 3x + 2y = 14 and 9x + ky = 42 has infinitely many solutions, where k is a constant. What is the value of k?",
+      "The bar graph shows the number of books in four genres checked out from a library during one week. The number of fiction books checked out was what percent of the total number of books shown?",
+      "If (2x - 5)(x + 4) = 0, what is the product of the two solutions to the equation?",
+      "A circle in the xy-plane has equation (x - 5)^2 + (y + 4)^2 = 169. The point (5, k) lies on the circle, and k is positive. What is the value of k?",
+      "The graph shows the total delivery cost C, in dollars, for a delivery distance of m miles. Which equation best represents this relationship?"
+    ],
+    "argumentative": [
+      "Is democracy the best form of government? Why or why not?",
+      "Should we prioritize individual freedom or collective good?",
+      "Can technology solve climate change? Why or why not?",
+      "Is objective truth possible in the modern world?",
+      "Should humanity become a multi-planetary species?",
+      "Is human progress inevitable or cyclical?",
+      "What would you do if you had to choose between two equally important values?",
+      "If you could redesign society from scratch, what would you prioritize?",
+      "Ask for research funding. Connect theoretical work to practical applications.",
+      "Persuade humanity to become interplanetary species. Address existential risks and opportunities.",
+      "Persuade on consciousness rights for AI. Navigate philosophical and practical implications.",
+      "Ask for paradigm shift in scientific thinking. Present revolutionary evidence respectfully.",
+      "Read this sight word: apple",
+      "Read this sight word: home",
+      "Read this sight word: today",
+      "Data set A is summarized in the frequency table. Data set B is created by adding 6 to each value in data set A. Which statement correctly compares the means and ranges of data sets A and B?",
+      "A school club bought notebooks for $4 each and folders for $3 each. The club bought a total of 28 notebooks and folders and spent $97. If n is the number of notebooks the club bought, which equation can be used to find n?",
+      "A concert venue reserves 18 seats for staff and sells the remaining seats to audience members. The venue has r rows with 14 audience seats in each row. If the total number of people in the venue can be at most 326, which inequality represents the possible values of r?",
+      "A print shop charges a fixed setup fee plus the same price for each booklet printed. The total cost is $287 for 35 booklets and $392 for 50 booklets. Which equation gives the total cost C, in dollars, for printing b booklets at this shop?",
+      "For x != 3, which expression is equivalent to (x^2 - 9)/(x - 3) + 2x?"
+    ],
+    "persuasive": [
+      "Is capitalism sustainable in the long term? Why?",
+      "Is consciousness unique to biological beings?",
+      "Can ethics be universal across cultures?",
+      "What does solitude feel like in different settings?",
+      "What does the passage of time feel like in different life stages?",
+      "If you discovered time travel, what ethical concerns would you have?",
+      "If consciousness could be transferred, would you still be \"you\"?",
+      "Persuade board to adopt AI ethics guidelines. Balance innovation with human values.",
+      "Convince society to rethink education system. Challenge assumptions with evidence.",
+      "Persuade leaders on climate action urgency. Integrate science, economics, and ethics.",
+      "Convince public on controversial policy. Navigate opposing viewpoints diplomatically.",
+      "Convince society to embrace post-scarcity economics. Challenge fundamental assumptions.",
+      "Convince civilization to transcend current limitations. Inspire with vision while addressing fears.",
+      "The function f is defined by f(x) = (x - 4)^2 - 9. Which value of x is a zero of f?",
+      "A line in the xy-plane has an x-intercept of 6 and a y-intercept of 9. Which equation represents this line?",
+      "Which finding, if true, would most directly strengthen the conservationists' argument about shielded streetlights?",
+      "Which statement best captures the district's caution?",
+      "Which choice completes the text with the most logical transition?",
+      "Which choice most effectively uses data from the table to accomplish the goal?",
+      "As used in the text, \"provisional\" most nearly means"
     ]
   }
 }

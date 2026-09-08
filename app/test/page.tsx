@@ -7,6 +7,7 @@ import { getCameraAndMicStream, getSupportedMimeType, stopStreamTracks } from '@
 import Camera from '@/components/Camera';
 import QuestionDisplay from '@/components/QuestionDisplay';
 import ControlButtons from '@/components/ControlButtons';
+import { formatGradeDisplayLabel } from '@/lib/questionSelector';
 
 export default function TestPage() {
   const router = useRouter();
@@ -195,7 +196,7 @@ export default function TestPage() {
             <div className="flex items-center gap-3">
               <h1 className="text-xl font-bold text-white tracking-tight">Student Oral Assessment</h1>
               <span className="px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold">
-                {studentInfo.grade.toUpperCase()}
+                {formatGradeDisplayLabel(studentInfo.grade)}
               </span>
             </div>
             <p className="text-xs text-slate-400 mt-0.5">

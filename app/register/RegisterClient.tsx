@@ -88,12 +88,20 @@ export default function RegisterClient() {
               onChange={(e) => setGrade(e.target.value)}
               className="w-full px-4 py-3 bg-slate-800/80 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 cursor-pointer"
             >
+              <option value="kinder">Kindergarten</option>
               <option value="grade1">Grade 1</option>
               <option value="grade2">Grade 2</option>
               <option value="grade3">Grade 3</option>
               <option value="grade4">Grade 4</option>
               <option value="grade5">Grade 5</option>
               <option value="grade6">Grade 6</option>
+              <option value="grade7">Grade 7</option>
+              <option value="grade8">Grade 8</option>
+              <option value="grade9">Grade 9</option>
+              <option value="grade10">Grade 10</option>
+              <option value="grade11">Grade 11</option>
+              <option value="grade12">Grade 12</option>
+              <option value="adult">Adult Level</option>
             </select>
           </div>
 
