@@ -7,7 +7,8 @@ import { getCameraAndMicStream, getSupportedMimeType, stopStreamTracks } from '@
 import Camera from '@/components/Camera';
 import QuestionDisplay from '@/components/QuestionDisplay';
 import ControlButtons from '@/components/ControlButtons';
-import ThemeToggle from '@/components/ThemeToggle';
+import MascotCompanion from '@/components/MascotCompanion';
+import LiveTranscript from '@/components/LiveTranscript';
 
 export default function TestClient() {
   const router = useRouter();
@@ -204,7 +205,7 @@ export default function TestClient() {
       </div>
 
       <div className="max-w-7xl w-full mx-auto space-y-6 relative z-10">
-        {/* Header Bar */}
+        {/* Header Bar with Mascot */}
         <header
           className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 backdrop-blur-xl border rounded-3xl p-5 shadow-lg transition-colors duration-300 ${
             isDark
@@ -231,6 +232,7 @@ export default function TestClient() {
           </div>
 
           <div className="flex items-center gap-4">
+            <MascotCompanion testState={testState} />
             <div className="text-right">
               <span className={`block text-[10px] font-bold uppercase tracking-wider ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
                 Session Progress
@@ -239,7 +241,6 @@ export default function TestClient() {
                 Question {currentQuestionIndex + 1} of {questions.length}
               </span>
             </div>
-            <ThemeToggle />
           </div>
         </header>
 
@@ -261,10 +262,10 @@ export default function TestClient() {
           </div>
         )}
 
-        {/* Main 2-Column Grid: Camera + Question Display */}
+        {/* Main 2-Column Grid: Camera + Question Display & Live Transcript */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Left Column: Camera Feed */}
-          <div className="lg:col-span-7 flex">
+          <div className="lg:col-span-7 flex flex-col gap-4">
             <Camera
               stream={stream}
               isRecording={testState !== 'INITIAL'}
@@ -273,8 +274,8 @@ export default function TestClient() {
             />
           </div>
 
-          {/* Right Column: Question Card */}
-          <div className="lg:col-span-5 flex">
+          {/* Right Column: Question Card & Live Transcript */}
+          <div className="lg:col-span-5 flex flex-col justify-between gap-4">
             <QuestionDisplay
               question={currentQuestion}
               currentIndex={currentQuestionIndex}
@@ -282,6 +283,8 @@ export default function TestClient() {
               testState={testState}
               onReadAloud={handleRepeatQuestion}
             />
+
+            <LiveTranscript testState={testState} />
           </div>
         </div>
 

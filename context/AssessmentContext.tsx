@@ -19,6 +19,23 @@ export interface StudentInfo {
   registeredAt: string;
 }
 
+export interface AssessmentSubmission {
+  id: string;
+  studentName: string;
+  grade: string;
+  submittedAt: string;
+  transcript: string;
+  questionCount: number;
+  durationSeconds: number;
+  rubricScores?: {
+    fluency: number;
+    pronunciation: number;
+    vocabulary: number;
+    comprehension: number;
+  };
+  notes?: string;
+}
+
 interface AssessmentContextType {
   studentInfo: StudentInfo | null;
   questions: SelectedQuestion[];
@@ -29,6 +46,9 @@ interface AssessmentContextType {
   recordedBlobUrl: string | null;
   theme: ThemeMode;
   isCenteredConfirmed: boolean;
+  timerSecondsPerQuestion: number;
+  liveTranscript: string;
+  submissions: AssessmentSubmission[];
   registerStudent: (name: string, grade: string, consentGiven: boolean) => void;
   setTestState: (state: TestState) => void;
   advanceToNextQuestion: () => void;
@@ -36,6 +56,10 @@ interface AssessmentContextType {
   resetSession: () => void;
   toggleTheme: () => void;
   setCenteredConfirmed: (confirmed: boolean) => void;
+  setTimerSecondsPerQuestion: (seconds: number) => void;
+  setLiveTranscript: (text: string) => void;
+  saveSubmission: (submission: AssessmentSubmission) => void;
+  updateSubmissionRubric: (id: string, scores: AssessmentSubmission['rubricScores'], notes?: string) => void;
 }
 
 const AssessmentContext = createContext<AssessmentContextType | undefined>(undefined);
@@ -49,13 +73,25 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   const [recordedBlobUrl, setRecordedBlobUrl] = useState<string | null>(null);
   const [theme, setTheme] = useState<ThemeMode>('dark');
   const [isCenteredConfirmed, setCenteredConfirmed] = useState<boolean>(false);
+  const [timerSecondsPerQuestion, setTimerSecondsPerQuestion] = useState<number>(60);
+  const [liveTranscript, setLiveTranscript] = useState<string>('');
+  const [submissions, setSubmissions] = useState<AssessmentSubmission[]>([]);
 
-  // Initialize theme from localStorage on mount
+  // Initialize theme & submissions from localStorage on mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('app-theme') as ThemeMode;
       if (savedTheme === 'light' || savedTheme === 'dark') {
         setTheme(savedTheme);
+      }
+
+      const savedSubmissions = localStorage.getItem('assessment-submissions');
+      if (savedSubmissions) {
+        try {
+          setSubmissions(JSON.parse(savedSubmissions));
+        } catch (err) {
+          console.error('Error parsing stored submissions:', err);
+        }
       }
     }
   }, []);
@@ -105,6 +141,7 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     setRecordedBlobState(null);
     setRecordedBlobUrl(null);
     setCenteredConfirmed(false);
+    setLiveTranscript('');
   };
 
   const advanceToNextQuestion = () => {
@@ -133,6 +170,40 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     setRecordedBlobState(null);
     setRecordedBlobUrl(null);
     setCenteredConfirmed(false);
+    setLiveTranscript('');
+  };
+
+  const saveSubmission = (newSub: AssessmentSubmission) => {
+    setSubmissions((prev) => {
+      const updated = [newSub, ...prev.filter((s) => s.id !== newSub.id)];
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('assessment-submissions', JSON.stringify(updated));
+      }
+      return updated;
+    });
+  };
+
+  const updateSubmissionRubric = (
+    id: string,
+    scores: AssessmentSubmission['rubricScores'],
+    notes?: string
+  ) => {
+    setSubmissions((prev) => {
+      const updated = prev.map((sub) => {
+        if (sub.id === id) {
+          return {
+            ...sub,
+            rubricScores: scores,
+            notes: notes !== undefined ? notes : sub.notes,
+          };
+        }
+        return sub;
+      });
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('assessment-submissions', JSON.stringify(updated));
+      }
+      return updated;
+    });
   };
 
   const currentQuestion = questions[currentQuestionIndex] || null;
@@ -149,6 +220,9 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         recordedBlobUrl,
         theme,
         isCenteredConfirmed,
+        timerSecondsPerQuestion,
+        liveTranscript,
+        submissions,
         registerStudent,
         setTestState,
         advanceToNextQuestion,
@@ -156,6 +230,10 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         resetSession,
         toggleTheme,
         setCenteredConfirmed,
+        setTimerSecondsPerQuestion,
+        setLiveTranscript,
+        saveSubmission,
+        updateSubmissionRubric,
       }}
     >
       {children}

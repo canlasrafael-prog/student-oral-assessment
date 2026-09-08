@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { useAssessment } from '@/context/AssessmentContext';
+import AudioLevelMeter from '@/components/AudioLevelMeter';
 
 interface CameraProps {
   stream: MediaStream | null;
@@ -134,20 +135,23 @@ export default function Camera({ stream, isRecording, isAnswering, recordingTime
 
           {/* Top Overlay Badges */}
           <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none z-10">
-            {/* Live Recording Badge */}
-            {isRecording && (
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-600/90 backdrop-blur-md text-white text-xs font-bold tracking-wider shadow-lg animate-pulse">
-                <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
-                <span>REC {formatTime(recordingTimeSeconds)}</span>
-              </div>
-            )}
+            {/* Live Recording Badge & Audio Level Meter */}
+            <div className="flex items-center gap-2">
+              {isRecording && (
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-600/90 backdrop-blur-md text-white text-xs font-bold tracking-wider shadow-lg animate-pulse">
+                  <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping" />
+                  <span>REC {formatTime(recordingTimeSeconds)}</span>
+                </div>
+              )}
+              <AudioLevelMeter stream={stream} isDark={isDark} />
+            </div>
 
             {/* Answering Mode Active Badge */}
             {isAnswering ? (
               <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-500/95 backdrop-blur-md text-slate-950 text-xs sm:text-sm font-extrabold tracking-wider shadow-lg shadow-emerald-500/30 border border-emerald-300/40">
                 <span className="relative flex h-3.5 w-3.5 items-center justify-center">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-80"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-rose-600"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-80" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-rose-600" />
                 </span>
                 <span className="flex items-center gap-1.5">
                   <span>🎤</span>

@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { useAssessment } from '@/context/AssessmentContext';
-import ThemeToggle from '@/components/ThemeToggle';
 
 export default function RegisterClient() {
   const router = useRouter();
-  const { registerStudent, theme } = useAssessment();
+  const { registerStudent, theme, timerSecondsPerQuestion, setTimerSecondsPerQuestion } = useAssessment();
   const isDark = theme === 'dark';
 
   const [name, setName] = useState('');
@@ -51,11 +51,6 @@ export default function RegisterClient() {
             isDark ? 'bg-violet-600/20' : 'bg-violet-300/40'
           }`}
         />
-      </div>
-
-      {/* Top Header Controls */}
-      <div className="absolute top-4 right-4 z-20">
-        <ThemeToggle />
       </div>
 
       <div
@@ -118,32 +113,63 @@ export default function RegisterClient() {
             />
           </div>
 
-          <div>
-            <label
-              htmlFor="grade-level"
-              className={`block text-xs font-bold uppercase tracking-wider mb-2 ${
-                isDark ? 'text-slate-300' : 'text-slate-700'
-              }`}
-            >
-              Grade Level <span className="text-rose-500">*</span>
-            </label>
-            <select
-              id="grade-level"
-              value={grade}
-              onChange={(e) => setGrade(e.target.value)}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 cursor-pointer ${
-                isDark
-                  ? 'bg-slate-800/80 border-slate-700 text-white'
-                  : 'bg-slate-50 border-slate-300 text-slate-900'
-              }`}
-            >
-              <option value="grade1">Grade 1</option>
-              <option value="grade2">Grade 2</option>
-              <option value="grade3">Grade 3</option>
-              <option value="grade4">Grade 4</option>
-              <option value="grade5">Grade 5</option>
-              <option value="grade6">Grade 6</option>
-            </select>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                htmlFor="grade-level"
+                className={`block text-xs font-bold uppercase tracking-wider mb-2 ${
+                  isDark ? 'text-slate-300' : 'text-slate-700'
+                }`}
+              >
+                Grade Level <span className="text-rose-500">*</span>
+              </label>
+              <select
+                id="grade-level"
+                value={grade}
+                onChange={(e) => setGrade(e.target.value)}
+                className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 cursor-pointer ${
+                  isDark
+                    ? 'bg-slate-800/80 border-slate-700 text-white'
+                    : 'bg-slate-50 border-slate-300 text-slate-900'
+                }`}
+              >
+                <option value="grade1">Grade 1</option>
+                <option value="grade2">Grade 2</option>
+                <option value="grade3">Grade 3</option>
+                <option value="grade4">Grade 4</option>
+                <option value="grade5">Grade 5</option>
+                <option value="grade6">Grade 6</option>
+              </select>
+            </div>
+
+            {/* Optional & Modifiable Countdown Timer Settings */}
+            <div>
+              <label
+                htmlFor="timer-select"
+                className={`block text-xs font-bold uppercase tracking-wider mb-2 ${
+                  isDark ? 'text-slate-300' : 'text-slate-700'
+                }`}
+              >
+                Question Timer
+              </label>
+              <select
+                id="timer-select"
+                value={timerSecondsPerQuestion}
+                onChange={(e) => setTimerSecondsPerQuestion(Number(e.target.value))}
+                className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 cursor-pointer ${
+                  isDark
+                    ? 'bg-slate-800/80 border-slate-700 text-white'
+                    : 'bg-slate-50 border-slate-300 text-slate-900'
+                }`}
+              >
+                <option value={30}>30 seconds / prompt</option>
+                <option value={45}>45 seconds / prompt</option>
+                <option value={60}>60 seconds / prompt (Default)</option>
+                <option value={90}>90 seconds / prompt</option>
+                <option value={120}>120 seconds / prompt</option>
+                <option value={0}>Timer Disabled (Untimed)</option>
+              </select>
+            </div>
           </div>
 
           {/* Privacy & Recording Notice */}
@@ -187,6 +213,18 @@ export default function RegisterClient() {
             </svg>
           </button>
         </form>
+
+        {/* Link to Teacher Dashboard */}
+        <div className="mt-6 pt-4 border-t border-slate-700/40 text-center">
+          <Link
+            href="/teacher"
+            className={`text-xs font-semibold underline underline-offset-4 transition-colors ${
+              isDark ? 'text-slate-400 hover:text-indigo-300' : 'text-slate-600 hover:text-indigo-600'
+            }`}
+          >
+            👩‍🏫 Switch to Teacher / Proctor Review Dashboard
+          </Link>
+        </div>
       </div>
     </div>
   );

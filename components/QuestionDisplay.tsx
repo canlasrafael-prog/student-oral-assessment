@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SelectedQuestion } from '@/lib/questionSelector';
 import { TestState, useAssessment } from '@/context/AssessmentContext';
 
@@ -19,13 +19,32 @@ export default function QuestionDisplay({
   testState,
   onReadAloud,
 }: QuestionDisplayProps) {
-  const { theme } = useAssessment();
+  const { theme, timerSecondsPerQuestion } = useAssessment();
   const isDark = theme === 'dark';
 
+  const [timeLeft, setTimeLeft] = useState<number>(timerSecondsPerQuestion);
+
+  const isAnswering = testState === 'ANSWERING_IN_PROGRESS';
   const isQuestionVisible =
     testState === 'QUESTION_DISPLAYED' ||
     testState === 'ANSWERING_IN_PROGRESS' ||
     testState === 'LAST_QUESTION_DONE';
+
+  // Reset timer whenever question changes or answering starts
+  useEffect(() => {
+    setTimeLeft(timerSecondsPerQuestion);
+  }, [currentIndex, testState, timerSecondsPerQuestion]);
+
+  // Countdown interval when answering is active and timer is enabled (> 0)
+  useEffect(() => {
+    if (!isAnswering || timerSecondsPerQuestion <= 0 || timeLeft <= 0) return;
+
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => Math.max(0, prev - 1));
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [isAnswering, timerSecondsPerQuestion, timeLeft]);
 
   return (
     <div
@@ -35,7 +54,7 @@ export default function QuestionDisplay({
           : 'bg-white/95 border-slate-200 text-slate-900 shadow-slate-200/60'
       }`}
     >
-      {/* Question progress indicators */}
+      {/* Question progress indicators & Timer Badge */}
       <div
         className={`flex items-center justify-between gap-4 mb-4 pb-4 border-b transition-colors duration-300 ${
           isDark ? 'border-slate-800' : 'border-slate-200'
@@ -58,13 +77,34 @@ export default function QuestionDisplay({
             />
           ))}
         </div>
-        <span
-          className={`text-xs font-semibold uppercase tracking-wider ${
-            isDark ? 'text-slate-400' : 'text-slate-500'
-          }`}
-        >
-          Question {currentIndex + 1} of {totalQuestions}
-        </span>
+
+        <div className="flex items-center gap-3">
+          {/* Optional Modifiable Countdown Timer Badge */}
+          {timerSecondsPerQuestion > 0 && isAnswering && (
+            <div
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold border transition-colors ${
+                timeLeft <= 10
+                  ? 'bg-rose-500/20 border-rose-500/40 text-rose-500 animate-pulse'
+                  : isDark
+                  ? 'bg-indigo-500/10 border-indigo-500/20 text-indigo-300'
+                  : 'bg-indigo-50 border-indigo-200 text-indigo-700'
+              }`}
+            >
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{timeLeft}s remaining</span>
+            </div>
+          )}
+
+          <span
+            className={`text-xs font-semibold uppercase tracking-wider ${
+              isDark ? 'text-slate-400' : 'text-slate-500'
+            }`}
+          >
+            Question {currentIndex + 1} of {totalQuestions}
+          </span>
+        </div>
       </div>
 
       {/* Main Question Content */}

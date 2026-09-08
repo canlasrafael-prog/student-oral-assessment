@@ -8,7 +8,7 @@ import ThemeToggle from '@/components/ThemeToggle';
 
 export default function DoneClient() {
   const router = useRouter();
-  const { studentInfo, recordedBlob, recordedBlobUrl, resetSession, theme } = useAssessment();
+  const { studentInfo, recordedBlob, recordedBlobUrl, resetSession, theme, liveTranscript, saveSubmission } = useAssessment();
   const isDark = theme === 'dark';
 
   const [isSyncing, setIsSyncing] = useState(false);
@@ -17,8 +17,20 @@ export default function DoneClient() {
   useEffect(() => {
     if (!studentInfo) {
       router.replace('/register');
+      return;
     }
-  }, [studentInfo, router]);
+
+    // Save submission to context & localStorage for Teacher Dashboard
+    saveSubmission({
+      id: `${studentInfo.name.replace(/\s+/g, '_')}_${Date.now()}`,
+      studentName: studentInfo.name,
+      grade: studentInfo.grade,
+      submittedAt: new Date().toISOString(),
+      transcript: liveTranscript,
+      questionCount: 5,
+      durationSeconds: 120,
+    });
+  }, [studentInfo, router, liveTranscript, saveSubmission]);
 
   if (!studentInfo) {
     return null;
