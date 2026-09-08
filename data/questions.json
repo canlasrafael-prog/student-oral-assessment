@@ -1,224 +1,224 @@
 {
   "grade1": {
     "narrative": [
-      "Tell a story about a fun day you spent with your favorite pet or animal.",
-      "Describe what happened the first time you learned to ride a tricycle or bicycle.",
-      "Tell a story about a surprise party or special celebration you went to.",
-      "Describe a funny event that made your whole family laugh out loud.",
-      "Tell a story about a dream you had where you could fly like a bird."
+      "Can you tell me five weather words? (Like sunny, rainy...)",
+      "Can you tell me five shapes? (Like circle, square...)",
+      "Can you tell me five animals? (Like dog, cat...)",
+      "Can you tell me five family members? (Like mother, father...)",
+      "Tell me about your morning routine."
     ],
     "descriptive": [
-      "Describe your favorite toy in detail. What color, shape, and size is it?",
-      "Describe what your favorite bedroom or quiet spot at home looks like.",
-      "Describe your favorite food or snack. How does it taste, smell, and feel?",
-      "Describe the weather on a warm summer day in your neighborhood.",
-      "Describe what your teacher or favorite helper looks like and does."
+      "Can you say five colors? (Like red, blue...)",
+      "Can you say five things you wear?",
+      "What are five rooms in a house?",
+      "What are five things you use at school? (Like pencil, book...)",
+      "What are five things you see outside?"
     ],
     "expository": [
-      "Explain how you get ready for school step-by-step every morning.",
-      "Explain how to make your favorite quick snack or sandwich.",
-      "Explain why it is important to wash your hands before eating.",
-      "Explain how to play your favorite game with a group of friends.",
-      "Explain what plants need in order to grow healthy and strong."
+      "Do you like chocolate or vanilla ice cream more? Why?",
+      "How do you wash your hands?",
+      "How do you make a peanut butter sandwich?",
+      "How do you brush your teeth?",
+      "How do you tie your shoes?"
     ],
     "argumentative": [
-      "Should students be allowed to bring their favorite toy to school? Why or why not?",
-      "Is playing outdoors better than playing indoors? Give reasons for your choice.",
-      "Should bedtimes be later on weekends? Explain your point of view.",
-      "Are dogs better pets than cats? Give two reasons why.",
-      "Should children help with simple household chores every day?"
+      "Is it better to have a cat or a dog? Why?",
+      "Should bedtime be earlier or later? Why?",
+      "Do you prefer summer or winter? Give reasons.",
+      "Is it better to play inside or outside? Why?",
+      "Can you name five toys or games?"
     ],
     "persuasive": [
-      "Convince your parents to take you to the park this afternoon.",
-      "Persuade your class to choose your favorite game during recess.",
-      "Convince a friend to try a new fruit or vegetable that they haven't tasted.",
-      "Persuade your family to watch your favorite animated movie tonight.",
-      "Convince your teacher to give the class five extra minutes of outdoor playtime."
+      "Can you name five vegetables?",
+      "Can you count from one to ten?",
+      "Can you name five body parts? (Like head, hand...)",
+      "Can you say the days of the week?",
+      "What does your teacher look like?"
     ]
   },
   "grade2": {
     "narrative": [
+      "Tell me about a fun day you had.",
+      "Tell me about your best friend.",
+      "Tell your parents why you need a pet. Promise to care for it.",
       "Tell a story about a memorable trip or weekend adventure with your family.",
-      "Describe a time you lost something important and how you searched for it.",
-      "Tell a story about helping a friend or classmate when they needed assistance.",
-      "Describe a rainy day when you had to find creative things to do indoors.",
-      "Tell a story about an unexpected visitor or animal that came into your yard."
+      "Describe a time you lost something important and how you searched for it."
     ],
     "descriptive": [
+      "Describe your best friend. What do they look like?",
+      "Describe your house. How many rooms are there?",
+      "Describe your favorite place to go.",
       "Describe your school playground. What equipment and areas are there?",
-      "Describe your favorite book character. What do they look like and wear?",
-      "Describe a cozy place where you like to read or rest when tired.",
-      "Describe the sounds and smells you experience during a busy morning at school.",
-      "Describe your favorite season of the year and what changes happen around you."
+      "Describe your favorite book character. What do they look like and wear?"
     ],
     "expository": [
-      "Explain how to take care of a household pet so it stays happy and healthy.",
-      "Explain why sharing and taking turns is important when playing with peers.",
-      "Explain the steps involved in cleaning up your bedroom.",
-      "Explain how a caterpillar turns into a butterfly in simple terms.",
-      "Explain why we need rules in the classroom and what happens when we follow them."
+      "How do you get to school from home?",
+      "How do you cross the street safely?",
+      "How do you make your bed?",
+      "How do you play your favorite game?",
+      "How do you take care of a pet?"
     ],
     "argumentative": [
-      "Should school recess be longer than twenty minutes? Explain your reasoning.",
-      "Is it better to read paper books or listen to audiobooks? State your opinion.",
-      "Should students wear school uniforms every day? Give reasons for your stance.",
-      "Are video games good for learning new skills? Defend your view.",
-      "Should homework be assigned on Friday nights? Explain why or why not."
+      "Should schools have longer recess? Why?",
+      "Should children have homework? Why or why not?",
+      "Should students wear uniforms? Give reasons.",
+      "Is it better to read books or watch TV? Why?",
+      "Should kids help with chores at home? Why?"
     ],
     "persuasive": [
-      "Persuade your school librarian to buy more comic books or graphic novels.",
-      "Convince your friends to start a garden project at school.",
-      "Persuade your family to adopt a pet from an animal shelter.",
-      "Convince your principal to organize a school talent show event.",
-      "Persuade your classmates to keep the classroom clean and organized."
+      "What can you see from your window?",
+      "What does your classroom look like?",
+      "What did you do last weekend?",
+      "What happened on your birthday?",
+      "Convince friends that reading is fun. Compare to TV time."
     ]
   },
   "grade3": {
     "narrative": [
+      "Tell me about your favorite story or movie. What happens?",
+      "Tell me about a time you were happy.",
       "Tell a story about a time you tried something difficult and succeeded.",
       "Describe an exciting mystery or puzzle you solved with a friend.",
-      "Tell a story about a science experiment that went differently than expected.",
-      "Describe a memorable holiday or cultural celebration in your home.",
-      "Tell a story about a journey to a place you had never visited before."
+      "Tell a story about a science experiment that went differently than expected."
     ],
     "descriptive": [
-      "Describe a bustling farmers market or grocery store full of fresh items.",
-      "Describe the ocean or a lake on a windy afternoon.",
-      "Describe your dream treehouse or secret outdoor fort.",
-      "Describe the appearance and personality of a historical figure you admire.",
-      "Describe a spectacular fireworks show or light festival you witnessed."
+      "Describe your favorite place to play. What makes it fun?",
+      "Describe a perfect day. What's the weather like?",
+      "Describe what you see at a park or playground.",
+      "Describe a time you helped someone.",
+      "Describe a bustling farmers market or grocery store full of fresh items."
     ],
     "expository": [
-      "Explain how water moves through the water cycle from ocean to clouds and rain.",
-      "Explain how to organize a successful team project or group game.",
-      "Explain why recycling paper and plastic helps protect the environment.",
-      "Explain how bees make honey and help flowers grow.",
-      "Explain the basic rules of your favorite sport or physical activity."
+      "How does a plant grow? What does it need?",
+      "How do you make a simple meal like scrambled eggs?",
+      "How do bees make honey?",
+      "How do you organize your school bag?",
+      "Why is recycling important? How do we do it?"
     ],
     "argumentative": [
-      "Should public libraries remain open on Sundays? Argue your position.",
-      "Is learning a musical instrument as important as doing sports? Explain.",
-      "Should sugary snacks be replaced with healthy options in school cafeterias?",
-      "Are ebooks better for students than printed textbooks?",
-      "Should students be allowed to select their own assigned seats in class?"
+      "Should students use phones in school? Why or why not?",
+      "Is it better to live in a city or countryside? Why?",
+      "Should everyone learn a second language? Why?",
+      "Should junk food be banned in schools? Why?",
+      "Is it better to have many friends or few close ones?"
     ],
     "persuasive": [
+      "What do you like to do on holidays?",
+      "If you found $10, what would you do?",
+      "Convince your teacher to plan a field trip. List learning benefits.",
       "Persuade your local community leader to build a new skateboard or bike park.",
-      "Convince your teacher to take the class on a field trip to a science museum.",
-      "Persuade your family to plan a camping trip in nature.",
-      "Convince your school to host an annual book swap day.",
-      "Persuade your peers to reduce single-use plastic water bottles at school."
+      "Convince your teacher to take the class on a field trip to a science museum."
     ]
   },
   "grade4": {
     "narrative": [
+      "Tell me about a time you were scared. What happened?",
       "Tell a story about a challenge your team faced during a sports game or contest.",
       "Describe a historical event from the perspective of someone living back then.",
       "Tell a story about finding a strange object in your backyard or park.",
-      "Describe a day when technology stopped working and how you adapted.",
-      "Tell a story about building something creative from scratch with friends."
+      "Describe a day when technology stopped working and how you adapted."
     ],
     "descriptive": [
+      "Describe your ideal bedroom. What would be in it?",
+      "Describe walking through a forest. What do you notice?",
+      "Describe a problem you solved. How did you do it?",
       "Describe a dense forest in autumn as the leaves change color and fall.",
-      "Describe the atmosphere inside a crowded stadium during a championship match.",
-      "Describe a futuristic city with flying transport and green rooftop gardens.",
-      "Describe the sounds and visual details of a thunderstorm approaching.",
-      "Describe an ancient castle and its surrounding moats and towers."
+      "Describe the atmosphere inside a crowded stadium during a championship match."
     ],
     "expository": [
-      "Explain how renewable energy sources like wind and solar power generate electricity.",
-      "Explain the process of how a book gets written, edited, and published.",
-      "Explain why exercise and proper sleep are vital for physical health.",
-      "Explain how volcanic eruptions occur and how they change landforms.",
-      "Explain the steps to conduct a safe and accurate scientific experiment."
+      "Is social media good or bad for teenagers? Why?",
+      "Are video games educational or harmful? Why?",
+      "How does rain form? Explain the water cycle.",
+      "How do you prepare for a test?",
+      "How does a bicycle work? What makes it move?"
     ],
     "argumentative": [
-      "Should mobile devices be permitted during school hours for educational use?",
-      "Is competition in sports beneficial or harmful for young athletes?",
-      "Should schools eliminate letter grades in favor of written feedback?",
-      "Are zoos essential for animal conservation or unfair to wildlife?",
-      "Should art and music classes receive the same funding as math and science?"
+      "Should animals be kept in zoos? Why or why not?",
+      "Should school start later in the morning? Why?",
+      "Should everyone do community service? Why?",
+      "What does your school look like to a visitor?",
+      "Ask teacher to accept creative project format. Link to learning goals."
     ],
     "persuasive": [
-      "Persuade your school board to invest in a school garden and composting system.",
-      "Convince your local newspaper to publish a monthly column written by students.",
-      "Persuade your family to spend one day every week completely free of digital screens.",
-      "Convince your class to participate in a charity volunteer drive.",
-      "Persuade your community to install safer crosswalks near local schools."
+      "Imagine you're at the beach. What do you see, hear, and feel?",
+      "What's the atmosphere like at a birthday party?",
+      "If you could visit any country, where would you go?",
+      "What would you do if you won a lot of money?",
+      "Persuade your class to join a charity walk. Appeal to helping others and team spirit."
     ]
   },
   "grade5": {
     "narrative": [
+      "Tell me about a difficult choice you had to make.",
+      "Describe a time when things didn't go as planned.",
+      "Tell me about a time you learned an important lesson.",
       "Tell a story about a moment when you had to show courage in a difficult situation.",
-      "Describe a memorable mentor or teacher who changed how you think.",
-      "Tell a story about an unexpected discovery during a nature hike or exploration.",
-      "Describe a time when working in a group taught you a valuable lesson about leadership.",
-      "Tell a story about a time you stood up for someone who was being treated unfairly."
+      "Describe a memorable mentor or teacher who changed how you think."
     ],
     "descriptive": [
+      "Describe a busy market. What sights, sounds, and smells do you notice?",
+      "Describe your favorite season. How does it affect everything?",
+      "Describe a festival in your country. What's the atmosphere?",
       "Describe a starry night sky viewed from a high mountain or remote area.",
-      "Describe the bustling environment of an international airport terminal.",
-      "Describe an underwater coral reef teeming with marine life and vivid colors.",
-      "Describe an antique store filled with mysterious objects from the past.",
-      "Describe the sensory details of a home-cooked meal prepared for a festival."
+      "Describe the bustling environment of an international airport terminal."
     ],
     "expository": [
-      "Explain how biodiversity contributes to the stability of an ecosystem.",
-      "Explain the system of checks and balances in government or student council.",
-      "Explain how algorithms recommendation engines suggest content on media platforms.",
-      "Explain the science behind weather forecasting and radar technology.",
-      "Explain how historical trade routes spread culture, goods, and ideas across continents."
+      "Is technology making us smarter or lazier? Why?",
+      "How does the internet work? How does information travel?",
+      "How do plants make their own food? Explain photosynthesis.",
+      "How do you make an important decision?",
+      "How does electricity get to your home?"
     ],
     "argumentative": [
-      "Should space exploration receive high government funding compared to earth conservation?",
-      "Is artificial intelligence a positive tool for student learning or a distraction?",
-      "Should school start later in the morning to allow students more sleep?",
-      "Are standardized tests an accurate measure of a student's intelligence?",
-      "Should social media platforms enforce strict minimum age restrictions?"
+      "Should grades determine a student's future? Why or why not?",
+      "Should plastic be completely banned? Why?",
+      "Is it better to work hard or work smart? Why?",
+      "Should space exploration be a priority? Why?",
+      "Paint a picture with words of sunrise or sunset."
     ],
     "persuasive": [
-      "Persuade your city council to expand public bicycle lanes and greenways.",
-      "Convince your school administration to initiate a peer mentorship program.",
-      "Persuade your community to host a cultural diversity exchange festival.",
-      "Convince your peers to adopt sustainable zero-waste habits in daily life.",
-      "Persuade your school to dedicate one hour weekly to independent passion projects."
+      "What's it like at the top of a tall building?",
+      "If you could change one thing about your past, what would it be?",
+      "What would life be like if phones didn't exist?",
+      "Persuade school board to change lunch menu. Use health data and student surveys.",
+      "Convince family to adopt eco-friendly habits. Present cost and planet benefits."
     ]
   },
   "grade6": {
     "narrative": [
+      "Should artificial intelligence replace human jobs? Why or why not?",
+      "Describe a cityscape at night. What story does it tell?",
+      "Tell me about a belief you've changed over time.",
       "Tell a story about a major transition, such as moving to a new school or community.",
-      "Describe an ethical dilemma you faced and how you decided on the right path.",
-      "Tell a story about a invention or project that failed initially and how you iterated.",
-      "Describe a historical adventure based on an era you studied in social studies.",
-      "Tell a story about a cross-cultural friendship that broadened your world view."
+      "Describe an ethical dilemma you faced and how you decided on the right path."
     ],
     "descriptive": [
-      "Describe a high-tech laboratory where scientists conduct cutting-edge research.",
-      "Describe the panoramic view from the summit of a steep mountain range.",
-      "Describe a bustling urban night market with glowing lanterns and diverse aromas.",
-      "Describe a calm sanctuary where you go to reflect and plan your goals.",
-      "Describe the interior of a historic library containing rare manuscripts and maps."
+      "Describe a place that made you feel peaceful. What created that feeling?",
+      "How would you describe the feeling of nostalgia?",
+      "Describe how a piece of music makes you feel.",
+      "Describe a moral dilemma you've faced. How did you resolve it?",
+      "Describe a high-tech laboratory where scientists conduct cutting-edge research."
     ],
     "expository": [
-      "Explain the impact of global climate change on polar habitats and sea levels.",
-      "Explain how peer pressure operates psychological mechanisms and how to navigate it.",
-      "Explain how supply and demand influence prices in a market economy.",
-      "Explain the mechanisms of immunity and how vaccines protect human health.",
-      "Explain how digital encryption secures private communications on the internet."
+      "Is privacy more important than security? Why?",
+      "Should wealthy countries help developing nations? How much?",
+      "How does an airplane fly? Explain the principles.",
+      "How does sleep affect your brain and body?",
+      "How do governments make laws?"
     ],
     "argumentative": [
-      "Should ethical guidelines regulate the advancement of artificial intelligence and robotics?",
-      "Is remote learning as effective as traditional classroom education for middle schoolers?",
-      "Should plastic packaging be completely banned by law in commercial retail?",
-      "Are competitive video games (e-sports) legitimate athletic sports?",
-      "Should voting in national elections be compulsory for all adult citizens?"
+      "Is economic growth more important than environmental protection?",
+      "Should genetic modification of humans be allowed?",
+      "Persuade investors to fund your startup idea. Present market research and vision.",
+      "Ask for promotion at work. Quantify achievements and future contributions.",
+      "Convince community to support renewable energy. Address concerns and benefits."
     ],
     "persuasive": [
-      "Persuade your school principal to introduce coding and robotics into the core curriculum.",
-      "Convince your community to launch a neighborhood solar power initiative.",
-      "Persuade local businesses to sponsor youth sports equipment and uniforms.",
-      "Convince your school board to implement mental health awareness days for students.",
-      "Persuade your peers to evaluate news sources critically to combat online misinformation."
+      "What does \"home\" feel like beyond physical description?",
+      "What would happen if people could read minds?",
+      "If you could relive one day, which would it be and what would you change?",
+      "Convince school to implement mental health programs. Use statistics and testimonials.",
+      "Persuade government officials on policy change. Balance multiple stakeholder interests."
     ]
   }
 }
