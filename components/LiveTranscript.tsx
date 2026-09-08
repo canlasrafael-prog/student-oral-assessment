@@ -42,10 +42,22 @@ export default function LiveTranscript({ testState }: LiveTranscriptProps) {
       console.warn('Speech recognition error:', err);
     };
 
+    recognition.onend = () => {
+      // Auto-restart recognition if answering is still active
+      if (recognitionRef.current && (window as any).__isAnsweringActive) {
+        try {
+          recognitionRef.current.start();
+        } catch (e) {}
+      }
+    };
+
     recognitionRef.current = recognition;
   }, [setLiveTranscript]);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      (window as any).__isAnsweringActive = isAnswering;
+    }
     const recognition = recognitionRef.current;
     if (!recognition) return;
 
