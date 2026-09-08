@@ -45,6 +45,7 @@ interface AssessmentContextType {
   recordedBlob: Blob | null;
   recordedBlobUrl: string | null;
   theme: ThemeMode;
+  showKoreanSubtitles: boolean;
   isCenteredConfirmed: boolean;
   timerSecondsPerQuestion: number;
   liveTranscript: string;
@@ -55,6 +56,7 @@ interface AssessmentContextType {
   setRecordedBlob: (blob: Blob) => void;
   resetSession: () => void;
   toggleTheme: () => void;
+  toggleKoreanSubtitles: () => void;
   setCenteredConfirmed: (confirmed: boolean) => void;
   setTimerSecondsPerQuestion: (seconds: number) => void;
   setLiveTranscript: (text: string) => void;
@@ -72,17 +74,23 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   const [recordedBlob, setRecordedBlobState] = useState<Blob | null>(null);
   const [recordedBlobUrl, setRecordedBlobUrl] = useState<string | null>(null);
   const [theme, setTheme] = useState<ThemeMode>('dark');
+  const [showKoreanSubtitles, setShowKoreanSubtitles] = useState<boolean>(false);
   const [isCenteredConfirmed, setCenteredConfirmed] = useState<boolean>(false);
   const [timerSecondsPerQuestion, setTimerSecondsPerQuestion] = useState<number>(60);
   const [liveTranscript, setLiveTranscript] = useState<string>('');
   const [submissions, setSubmissions] = useState<AssessmentSubmission[]>([]);
 
-  // Initialize theme & submissions from localStorage on mount
+  // Initialize theme, subtitles & submissions from localStorage on mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('app-theme') as ThemeMode;
       if (savedTheme === 'light' || savedTheme === 'dark') {
         setTheme(savedTheme);
+      }
+
+      const savedSubtitles = localStorage.getItem('app-korean-subtitles');
+      if (savedSubtitles === 'true') {
+        setShowKoreanSubtitles(true);
       }
 
       const savedSubmissions = localStorage.getItem('assessment-submissions');
@@ -122,6 +130,16 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
+  const toggleKoreanSubtitles = () => {
+    setShowKoreanSubtitles((prev) => {
+      const next = !prev;
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('app-korean-subtitles', String(next));
+      }
+      return next;
+    });
   };
 
   const registerStudent = (name: string, grade: string, consentGiven: boolean) => {
@@ -219,6 +237,7 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         recordedBlob,
         recordedBlobUrl,
         theme,
+        showKoreanSubtitles,
         isCenteredConfirmed,
         timerSecondsPerQuestion,
         liveTranscript,
@@ -229,6 +248,7 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         setRecordedBlob: handleSetRecordedBlob,
         resetSession,
         toggleTheme,
+        toggleKoreanSubtitles,
         setCenteredConfirmed,
         setTimerSecondsPerQuestion,
         setLiveTranscript,

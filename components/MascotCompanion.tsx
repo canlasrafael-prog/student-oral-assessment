@@ -8,26 +8,32 @@ interface MascotCompanionProps {
 }
 
 export default function MascotCompanion({ testState }: MascotCompanionProps) {
-  const { theme } = useAssessment();
+  const { theme, showKoreanSubtitles } = useAssessment();
   const isDark = theme === 'dark';
   const [bubbleText, setBubbleText] = useState<string>('Hi there! I am Sparky! I will guide you through your assessment!');
+  const [koreanBubbleText, setKoreanBubbleText] = useState<string>('안녕하세요! 저는 스파키예요! 평가 과정을 도와줄게요!');
 
   useEffect(() => {
     switch (testState) {
       case 'INITIAL':
         setBubbleText('Ready to shine? Click "Next" to turn on your camera!');
+        setKoreanBubbleText('시작할 준비가 되셨나요? "다음"을 눌러 카메라는 켜세요!');
         break;
       case 'QUESTION_DISPLAYED':
         setBubbleText('Listen or read the prompt carefully. Take a deep breath!');
+        setKoreanBubbleText('질문을 주의 깊게 읽고 들어보세요. 천천히 심호흡하세요!');
         break;
       case 'ANSWERING_IN_PROGRESS':
         setBubbleText('🎤 You are live! Speak clearly and share your awesome thoughts!');
+        setKoreanBubbleText('🎤 녹음 중입니다! 목소리를 또박또박하여 멋진 생각을 말해 보세요!');
         break;
       case 'LAST_QUESTION_DONE':
         setBubbleText('Hooray! You answered all 5 questions! Click Next to submit!');
+        setKoreanBubbleText('만세! 5개 질문에 모두 답변했습니다! 다음을 눌러 제출하세요!');
         break;
       default:
         setBubbleText('You are doing great!');
+        setKoreanBubbleText('정말 잘하고 계십니다!');
         break;
     }
   }, [testState]);
@@ -56,6 +62,11 @@ export default function MascotCompanion({ testState }: MascotCompanionProps) {
           }`}
         />
         <p className="leading-snug">{bubbleText}</p>
+        {showKoreanSubtitles && (
+          <p className="mt-1 text-[11px] font-medium text-blue-300 border-t border-amber-500/20 pt-1">
+            🇰🇷 {koreanBubbleText}
+          </p>
+        )}
       </div>
     </div>
   );

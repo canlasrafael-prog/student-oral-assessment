@@ -16,7 +16,7 @@ export default function ControlButtons({
   onRepeatQuestion,
   onEmergencyStop,
 }: ControlButtonsProps) {
-  const { theme } = useAssessment();
+  const { theme, showKoreanSubtitles } = useAssessment();
   const isDark = theme === 'dark';
 
   // Caption text above the single "Next" button based on internal state
@@ -32,6 +32,21 @@ export default function ControlButtons({
         return 'Tap Next to finish and submit';
       default:
         return 'Tap Next to continue';
+    }
+  };
+
+  const getKoreanCaptionText = (): string => {
+    switch (testState) {
+      case 'INITIAL':
+        return '시작하려면 다음(Next)을 누르세요';
+      case 'QUESTION_DISPLAYED':
+        return '질문을 읽고 들은 후 준비가 되면 다음(Next)을 누르세요';
+      case 'ANSWERING_IN_PROGRESS':
+        return '🎤 지금 답변을 말씀하세요! 마치면 다음(Next)을 누르세요';
+      case 'LAST_QUESTION_DONE':
+        return '제출하고 마무리하려면 다음(Next)을 누르세요';
+      default:
+        return '계속하려면 다음(Next)을 누르세요';
     }
   };
 
@@ -51,11 +66,16 @@ export default function ControlButtons({
       {/* Dynamic Status Caption for proctor / older student context */}
       <div className="text-center space-y-1">
         <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-500">
-          Current Step
+          Current Step {showKoreanSubtitles && '(현재 단계)'}
         </span>
         <p className={`text-sm sm:text-base font-semibold ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
           {getCaptionText()}
         </p>
+        {showKoreanSubtitles && (
+          <p className="text-xs font-medium text-blue-400">
+            🇰🇷 {getKoreanCaptionText()}
+          </p>
+        )}
       </div>
 
       {/* SINGLE LARGE PRIMARY BUTTON: Always hardcoded to "Next" */}

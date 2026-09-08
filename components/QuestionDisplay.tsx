@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { SelectedQuestion } from '@/lib/questionSelector';
 import { TestState, useAssessment } from '@/context/AssessmentContext';
+import { getCategoryTranslation, getQuestionTranslation, getUITranslation } from '@/lib/koreanTranslations';
 
 interface QuestionDisplayProps {
   question: SelectedQuestion | null;
@@ -19,7 +20,7 @@ export default function QuestionDisplay({
   testState,
   onReadAloud,
 }: QuestionDisplayProps) {
-  const { theme, timerSecondsPerQuestion } = useAssessment();
+  const { theme, timerSecondsPerQuestion, showKoreanSubtitles } = useAssessment();
   const isDark = theme === 'dark';
 
   const [timeLeft, setTimeLeft] = useState<number>(timerSecondsPerQuestion);
@@ -103,6 +104,7 @@ export default function QuestionDisplay({
             }`}
           >
             Question {currentIndex + 1} of {totalQuestions}
+            {showKoreanSubtitles && ` (${currentIndex + 1} / ${totalQuestions} 질문)`}
           </span>
         </div>
       </div>
@@ -111,14 +113,21 @@ export default function QuestionDisplay({
       <div className="my-auto py-2">
         {isQuestionVisible && question ? (
           <div className="space-y-3">
-            <div
-              className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${
-                isDark
-                  ? 'bg-indigo-500/10 border-indigo-500/20 text-indigo-300'
-                  : 'bg-indigo-50 border-indigo-200 text-indigo-700'
-              }`}
-            >
-              {question.categoryLabel}
+            <div className="flex flex-wrap items-center gap-2">
+              <div
+                className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${
+                  isDark
+                    ? 'bg-indigo-500/10 border-indigo-500/20 text-indigo-300'
+                    : 'bg-indigo-50 border-indigo-200 text-indigo-700'
+                }`}
+              >
+                {question.categoryLabel}
+              </div>
+              {showKoreanSubtitles && (
+                <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                  <span>🇰🇷 {getCategoryTranslation(question.categoryLabel)}</span>
+                </div>
+              )}
             </div>
             <h2
               className={`text-xl sm:text-2xl font-bold leading-relaxed ${
@@ -127,14 +136,38 @@ export default function QuestionDisplay({
             >
               &quot;{question.text}&quot;
             </h2>
+
+            {/* Korean Subtitle Box */}
+            {showKoreanSubtitles && (
+              <div
+                className={`p-4 rounded-2xl border text-sm sm:text-base font-medium flex items-start gap-2.5 transition-all ${
+                  isDark
+                    ? 'bg-blue-950/30 border-blue-800/40 text-blue-200'
+                    : 'bg-blue-50/80 border-blue-200 text-blue-900'
+                }`}
+              >
+                <span className="text-base select-none shrink-0 mt-0.5">🇰🇷</span>
+                <div className="space-y-0.5">
+                  <div className="text-[11px] font-bold tracking-wide uppercase opacity-75">한국어 자막 번역</div>
+                  <p className="leading-relaxed">&quot;{getQuestionTranslation(question.text)}&quot;</p>
+                </div>
+              </div>
+            )}
           </div>
         ) : (
-          <div className="text-center py-6">
+          <div className="text-center py-6 space-y-1">
             <p className={`text-lg font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
               {testState === 'INITIAL'
                 ? 'Click "Start Recording" to enable camera & proceed.'
                 : 'Click "Start Question" to display your first prompt.'}
             </p>
+            {showKoreanSubtitles && (
+              <p className="text-sm text-blue-400 font-normal">
+                {testState === 'INITIAL'
+                  ? '🇰🇷 "녹음 시작하기"를 클릭하여 카메라는 켜고 진행하세요.'
+                  : '🇰🇷 "질문 시작하기"를 클릭하여 첫 번째 질문을 표시하세요.'}
+              </p>
+            )}
           </div>
         )}
       </div>
